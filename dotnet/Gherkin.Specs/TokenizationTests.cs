@@ -10,7 +10,8 @@ namespace Gherkin.Specs
     [TestFixture]
     public class TokenizationTests
     {
-        [Test, TestCaseSource(typeof(TestFileProvider), "GetValidTestFiles")]
+        //[Test]
+        [TestCaseSource(typeof(TestFileProvider), "GetValidTestFiles")]
         public void TestSuccessfulTokenMatching(string testFeatureFile)
         {
             var featureFileFolder = Path.GetDirectoryName(testFeatureFile);

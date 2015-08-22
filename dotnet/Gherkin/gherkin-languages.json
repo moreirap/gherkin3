@@ -1,504 +1,509 @@
 {
-  "af": {
-    "and": [
-      "* ",
-      "En "
-    ],
-    "background": [
-      "Agtergrond"
-    ],
-    "but": [
-      "* ",
-      "Maar "
-    ],
-    "examples": [
-      "Voorbeelde"
-    ],
-    "feature": [
-      "Funksie",
-      "Besigheid Behoefte",
-      "Vermoë"
-    ],
-    "given": [
-      "* ",
-      "Gegewe "
-    ],
-    "name": "Afrikaans",
-    "native": "Afrikaans",
-    "scenario": [
-      "Situasie"
-    ],
-    "scenarioOutline": [
-      "Situasie Uiteensetting"
-    ],
-    "then": [
-      "* ",
-      "Dan "
-    ],
-    "when": [
-      "* ",
-      "Wanneer "
-    ]
-  },
-  "am": {
-    "and": [
-      "* ",
-      "Եվ "
-    ],
-    "background": [
-      "Կոնտեքստ"
-    ],
-    "but": [
-      "* ",
-      "Բայց "
-    ],
-    "examples": [
-      "Օրինակներ"
-    ],
-    "feature": [
-      "Ֆունկցիոնալություն",
-      "Հատկություն"
-    ],
-    "given": [
-      "* ",
-      "Դիցուք "
-    ],
-    "name": "Armenian",
-    "native": "հայերեն",
-    "scenario": [
-      "Սցենար"
-    ],
-    "scenarioOutline": [
-      "Սցենարի կառուցվացքը"
-    ],
-    "then": [
-      "* ",
-      "Ապա "
-    ],
-    "when": [
-      "* ",
-      "Եթե ",
-      "Երբ "
-    ]
-  },
-  "ar": {
-    "and": [
-      "* ",
-      "و "
-    ],
-    "background": [
-      "الخلفية"
-    ],
-    "but": [
-      "* ",
-      "لكن "
-    ],
-    "examples": [
-      "امثلة"
-    ],
-    "feature": [
-      "خاصية"
-    ],
-    "given": [
-      "* ",
-      "بفرض "
-    ],
-    "name": "Arabic",
-    "native": "العربية",
-    "scenario": [
-      "سيناريو"
-    ],
-    "scenarioOutline": [
-      "سيناريو مخطط"
-    ],
-    "then": [
-      "* ",
-      "اذاً ",
-      "ثم "
-    ],
-    "when": [
-      "* ",
-      "متى ",
-      "عندما "
-    ]
-  },
-  "bg": {
-    "and": [
-      "* ",
-      "И "
-    ],
-    "background": [
-      "Предистория"
-    ],
-    "but": [
-      "* ",
-      "Но "
-    ],
-    "examples": [
-      "Примери"
-    ],
-    "feature": [
-      "Функционалност"
-    ],
-    "given": [
-      "* ",
-      "Дадено "
-    ],
-    "name": "Bulgarian",
-    "native": "български",
-    "scenario": [
-      "Сценарий"
-    ],
-    "scenarioOutline": [
-      "Рамка на сценарий"
-    ],
-    "then": [
-      "* ",
-      "То "
-    ],
-    "when": [
-      "* ",
-      "Когато "
-    ]
-  },
-  "bm": {
-    "and": [
-      "* ",
-      "Dan "
-    ],
-    "background": [
-      "Latar Belakang"
-    ],
-    "but": [
-      "* ",
-      "Tetapi ",
-      "Tapi "
-    ],
-    "examples": [
-      "Contoh"
-    ],
-    "feature": [
-      "Fungsi"
-    ],
-    "given": [
-      "* ",
-      "Diberi ",
-      "Bagi "
-    ],
-    "name": "Malay",
-    "native": "Bahasa Melayu",
-    "scenario": [
-      "Senario",
-      "Situai",
-      "Keadaan"
-    ],
-    "scenarioOutline": [
-      "Template Senario",
-      "Template Situai",
-      "Template Keadaan",
-      "Menggariskan Senario"
-    ],
-    "then": [
-      "* ",
-      "Maka ",
-      "Kemudian "
-    ],
-    "when": [
-      "* ",
-      "Apabila "
-    ]
-  },
-  "ca": {
-    "and": [
-      "* ",
-      "I "
-    ],
-    "background": [
-      "Rerefons",
-      "Antecedents"
-    ],
-    "but": [
-      "* ",
-      "Però "
-    ],
-    "examples": [
-      "Exemples"
-    ],
-    "feature": [
-      "Característica",
-      "Funcionalitat"
-    ],
-    "given": [
-      "* ",
-      "Donat ",
-      "Donada ",
-      "Atès ",
-      "Atesa "
-    ],
-    "name": "Catalan",
-    "native": "català",
-    "scenario": [
-      "Escenari"
-    ],
-    "scenarioOutline": [
-      "Esquema de l'escenari"
-    ],
-    "then": [
-      "* ",
-      "Aleshores ",
-      "Cal "
-    ],
-    "when": [
-      "* ",
-      "Quan "
-    ]
-  },
-  "cs": {
-    "and": [
-      "* ",
-      "A také ",
-      "A "
-    ],
-    "background": [
-      "Pozadí",
-      "Kontext"
-    ],
-    "but": [
-      "* ",
-      "Ale "
-    ],
-    "examples": [
-      "Příklady"
-    ],
-    "feature": [
-      "Požadavek"
-    ],
-    "given": [
-      "* ",
-      "Pokud ",
-      "Za předpokladu "
-    ],
-    "name": "Czech",
-    "native": "Česky",
-    "scenario": [
-      "Scénář"
-    ],
-    "scenarioOutline": [
-      "Náčrt Scénáře",
-      "Osnova scénáře"
-    ],
-    "then": [
-      "* ",
-      "Pak "
-    ],
-    "when": [
-      "* ",
-      "Když "
-    ]
-  },
-  "cy-GB": {
-    "and": [
-      "* ",
-      "A "
-    ],
-    "background": [
-      "Cefndir"
-    ],
-    "but": [
-      "* ",
-      "Ond "
-    ],
-    "examples": [
-      "Enghreifftiau"
-    ],
-    "feature": [
-      "Arwedd"
-    ],
-    "given": [
-      "* ",
-      "Anrhegedig a "
-    ],
-    "name": "Welsh",
-    "native": "Cymraeg",
-    "scenario": [
-      "Scenario"
-    ],
-    "scenarioOutline": [
-      "Scenario Amlinellol"
-    ],
-    "then": [
-      "* ",
-      "Yna "
-    ],
-    "when": [
-      "* ",
-      "Pryd "
-    ]
-  },
-  "da": {
-    "and": [
-      "* ",
-      "Og "
-    ],
-    "background": [
-      "Baggrund"
-    ],
-    "but": [
-      "* ",
-      "Men "
-    ],
-    "examples": [
-      "Eksempler"
-    ],
-    "feature": [
-      "Egenskab"
-    ],
-    "given": [
-      "* ",
-      "Givet "
-    ],
-    "name": "Danish",
-    "native": "dansk",
-    "scenario": [
-      "Scenarie"
-    ],
-    "scenarioOutline": [
-      "Abstrakt Scenario"
-    ],
-    "then": [
-      "* ",
-      "Så "
-    ],
-    "when": [
-      "* ",
-      "Når "
-    ]
-  },
-  "de": {
-    "and": [
-      "* ",
-      "Und "
-    ],
-    "background": [
-      "Grundlage"
-    ],
-    "but": [
-      "* ",
-      "Aber "
-    ],
-    "examples": [
-      "Beispiele"
-    ],
-    "feature": [
-      "Funktionalität"
-    ],
-    "given": [
-      "* ",
-      "Angenommen ",
-      "Gegeben sei ",
-      "Gegeben seien "
-    ],
-    "name": "German",
-    "native": "Deutsch",
-    "scenario": [
-      "Szenario"
-    ],
-    "scenarioOutline": [
-      "Szenariogrundriss"
-    ],
-    "then": [
-      "* ",
-      "Dann "
-    ],
-    "when": [
-      "* ",
-      "Wenn "
-    ]
-  },
-  "el": {
-    "and": [
-      "* ",
-      "Και "
-    ],
-    "background": [
-      "Υπόβαθρο"
-    ],
-    "but": [
-      "* ",
-      "Αλλά "
-    ],
-    "examples": [
-      "Παραδείγματα",
-      "Σενάρια"
-    ],
-    "feature": [
-      "Δυνατότητα",
-      "Λειτουργία"
-    ],
-    "given": [
-      "* ",
-      "Δεδομένου "
-    ],
-    "name": "Greek",
-    "native": "Ελληνικά",
-    "scenario": [
-      "Σενάριο"
-    ],
-    "scenarioOutline": [
-      "Περιγραφή Σεναρίου"
-    ],
-    "then": [
-      "* ",
-      "Τότε "
-    ],
-    "when": [
-      "* ",
-      "Όταν "
-    ]
-  },
-  "en": {
-    "and": [
-      "* ",
-      "And "
-    ],
-    "background": [
-      "Background"
-    ],
-    "but": [
-      "* ",
-      "But "
-    ],
-    "examples": [
-      "Examples",
-      "Scenarios"
-    ],
-    "feature": [
-      "Feature",
-      "Business Need",
-      "Ability"
-    ],
-    "given": [
-      "* ",
-      "Given "
-    ],
-    "name": "English",
-    "native": "English",
-    "scenario": [
-      "Scenario"
-    ],
-    "scenarioOutline": [
-      "Scenario Outline",
-      "Scenario Template"
-    ],
-    "then": [
-      "* ",
-      "Then "
-    ],
-    "when": [
-      "* ",
-      "When "
-    ]
-  },
+    "af": {
+        "and": [
+            "* ",
+            "En "
+        ],
+        "background": [
+            "Agtergrond"
+        ],
+        "but": [
+            "* ",
+            "Maar "
+        ],
+        "examples": [
+            "Voorbeelde"
+        ],
+        "feature": [
+            "Funksie",
+            "Besigheid Behoefte",
+            "Vermoë"
+        ],
+        "given": [
+            "* ",
+            "Gegewe "
+        ],
+        "name": "Afrikaans",
+        "native": "Afrikaans",
+        "scenario": [
+            "Situasie"
+        ],
+        "scenarioOutline": [
+            "Situasie Uiteensetting"
+        ],
+        "then": [
+            "* ",
+            "Dan "
+        ],
+        "when": [
+            "* ",
+            "Wanneer "
+        ]
+    },
+    "am": {
+        "and": [
+            "* ",
+            "Եվ "
+        ],
+        "background": [
+            "Կոնտեքստ"
+        ],
+        "but": [
+            "* ",
+            "Բայց "
+        ],
+        "examples": [
+            "Օրինակներ"
+        ],
+        "feature": [
+            "Ֆունկցիոնալություն",
+            "Հատկություն"
+        ],
+        "given": [
+            "* ",
+            "Դիցուք "
+        ],
+        "name": "Armenian",
+        "native": "հայերեն",
+        "scenario": [
+            "Սցենար"
+        ],
+        "scenarioOutline": [
+            "Սցենարի կառուցվացքը"
+        ],
+        "then": [
+            "* ",
+            "Ապա "
+        ],
+        "when": [
+            "* ",
+            "Եթե ",
+            "Երբ "
+        ]
+    },
+    "ar": {
+        "and": [
+            "* ",
+            "و "
+        ],
+        "background": [
+            "الخلفية"
+        ],
+        "but": [
+            "* ",
+            "لكن "
+        ],
+        "examples": [
+            "امثلة"
+        ],
+        "feature": [
+            "خاصية"
+        ],
+        "given": [
+            "* ",
+            "بفرض "
+        ],
+        "name": "Arabic",
+        "native": "العربية",
+        "scenario": [
+            "سيناريو"
+        ],
+        "scenarioOutline": [
+            "سيناريو مخطط"
+        ],
+        "then": [
+            "* ",
+            "اذاً ",
+            "ثم "
+        ],
+        "when": [
+            "* ",
+            "متى ",
+            "عندما "
+        ]
+    },
+    "bg": {
+        "and": [
+            "* ",
+            "И "
+        ],
+        "background": [
+            "Предистория"
+        ],
+        "but": [
+            "* ",
+            "Но "
+        ],
+        "examples": [
+            "Примери"
+        ],
+        "feature": [
+            "Функционалност"
+        ],
+        "given": [
+            "* ",
+            "Дадено "
+        ],
+        "name": "Bulgarian",
+        "native": "български",
+        "scenario": [
+            "Сценарий"
+        ],
+        "scenarioOutline": [
+            "Рамка на сценарий"
+        ],
+        "then": [
+            "* ",
+            "То "
+        ],
+        "when": [
+            "* ",
+            "Когато "
+        ]
+    },
+    "bm": {
+        "and": [
+            "* ",
+            "Dan "
+        ],
+        "background": [
+            "Latar Belakang"
+        ],
+        "but": [
+            "* ",
+            "Tetapi ",
+            "Tapi "
+        ],
+        "examples": [
+            "Contoh"
+        ],
+        "feature": [
+            "Fungsi"
+        ],
+        "given": [
+            "* ",
+            "Diberi ",
+            "Bagi "
+        ],
+        "name": "Malay",
+        "native": "Bahasa Melayu",
+        "scenario": [
+            "Senario",
+            "Situai",
+            "Keadaan"
+        ],
+        "scenarioOutline": [
+            "Template Senario",
+            "Template Situai",
+            "Template Keadaan",
+            "Menggariskan Senario"
+        ],
+        "then": [
+            "* ",
+            "Maka ",
+            "Kemudian "
+        ],
+        "when": [
+            "* ",
+            "Apabila "
+        ]
+    },
+    "ca": {
+        "and": [
+            "* ",
+            "I "
+        ],
+        "background": [
+            "Rerefons",
+            "Antecedents"
+        ],
+        "but": [
+            "* ",
+            "Però "
+        ],
+        "examples": [
+            "Exemples"
+        ],
+        "feature": [
+            "Característica",
+            "Funcionalitat"
+        ],
+        "given": [
+            "* ",
+            "Donat ",
+            "Donada ",
+            "Atès ",
+            "Atesa "
+        ],
+        "name": "Catalan",
+        "native": "català",
+        "scenario": [
+            "Escenari"
+        ],
+        "scenarioOutline": [
+            "Esquema de l'escenari"
+        ],
+        "then": [
+            "* ",
+            "Aleshores ",
+            "Cal "
+        ],
+        "when": [
+            "* ",
+            "Quan "
+        ]
+    },
+    "cs": {
+        "and": [
+            "* ",
+            "A také ",
+            "A "
+        ],
+        "background": [
+            "Pozadí",
+            "Kontext"
+        ],
+        "but": [
+            "* ",
+            "Ale "
+        ],
+        "examples": [
+            "Příklady"
+        ],
+        "feature": [
+            "Požadavek"
+        ],
+        "given": [
+            "* ",
+            "Pokud ",
+            "Za předpokladu "
+        ],
+        "name": "Czech",
+        "native": "Česky",
+        "scenario": [
+            "Scénář"
+        ],
+        "scenarioOutline": [
+            "Náčrt Scénáře",
+            "Osnova scénáře"
+        ],
+        "then": [
+            "* ",
+            "Pak "
+        ],
+        "when": [
+            "* ",
+            "Když "
+        ]
+    },
+    "cy-GB": {
+        "and": [
+            "* ",
+            "A "
+        ],
+        "background": [
+            "Cefndir"
+        ],
+        "but": [
+            "* ",
+            "Ond "
+        ],
+        "examples": [
+            "Enghreifftiau"
+        ],
+        "feature": [
+            "Arwedd"
+        ],
+        "given": [
+            "* ",
+            "Anrhegedig a "
+        ],
+        "name": "Welsh",
+        "native": "Cymraeg",
+        "scenario": [
+            "Scenario"
+        ],
+        "scenarioOutline": [
+            "Scenario Amlinellol"
+        ],
+        "then": [
+            "* ",
+            "Yna "
+        ],
+        "when": [
+            "* ",
+            "Pryd "
+        ]
+    },
+    "da": {
+        "and": [
+            "* ",
+            "Og "
+        ],
+        "background": [
+            "Baggrund"
+        ],
+        "but": [
+            "* ",
+            "Men "
+        ],
+        "examples": [
+            "Eksempler"
+        ],
+        "feature": [
+            "Egenskab"
+        ],
+        "given": [
+            "* ",
+            "Givet "
+        ],
+        "name": "Danish",
+        "native": "dansk",
+        "scenario": [
+            "Scenarie"
+        ],
+        "scenarioOutline": [
+            "Abstrakt Scenario"
+        ],
+        "then": [
+            "* ",
+            "Så "
+        ],
+        "when": [
+            "* ",
+            "Når "
+        ]
+    },
+    "de": {
+        "and": [
+            "* ",
+            "Und "
+        ],
+        "background": [
+            "Grundlage"
+        ],
+        "but": [
+            "* ",
+            "Aber "
+        ],
+        "examples": [
+            "Beispiele"
+        ],
+        "feature": [
+            "Funktionalität"
+        ],
+        "given": [
+            "* ",
+            "Angenommen ",
+            "Gegeben sei ",
+            "Gegeben seien "
+        ],
+        "name": "German",
+        "native": "Deutsch",
+        "scenario": [
+            "Szenario"
+        ],
+        "scenarioOutline": [
+            "Szenariogrundriss"
+        ],
+        "then": [
+            "* ",
+            "Dann "
+        ],
+        "when": [
+            "* ",
+            "Wenn "
+        ]
+    },
+    "el": {
+        "and": [
+            "* ",
+            "Και "
+        ],
+        "background": [
+            "Υπόβαθρο"
+        ],
+        "but": [
+            "* ",
+            "Αλλά "
+        ],
+        "examples": [
+            "Παραδείγματα",
+            "Σενάρια"
+        ],
+        "feature": [
+            "Δυνατότητα",
+            "Λειτουργία"
+        ],
+        "given": [
+            "* ",
+            "Δεδομένου "
+        ],
+        "name": "Greek",
+        "native": "Ελληνικά",
+        "scenario": [
+            "Σενάριο"
+        ],
+        "scenarioOutline": [
+            "Περιγραφή Σεναρίου"
+        ],
+        "then": [
+            "* ",
+            "Τότε "
+        ],
+        "when": [
+            "* ",
+            "Όταν "
+        ]
+    },
+    "en": {
+        "and": [
+            "* ",
+            "And "
+        ],
+        "background": [
+            "Background"
+        ],
+        "but": [
+            "* ",
+            "But "
+        ],
+        "examples": [
+            "Examples",
+            "Scenarios"
+        ],
+        "feature": [
+            "Feature",
+            "Business Need",
+            "Ability"
+        ],
+        "given": [
+            "* ",
+            "Given "
+        ],
+        "name": "English",
+        "native": "English",
+        "scenario": [
+            "Scenario"
+        ],
+        "scenarioOutline": [
+            "Scenario Outline",
+            "Scenario Template"
+        ],
+        "then": [
+            "* ",
+            "Then "
+        ],
+        "when": [
+            "* ",
+            "When "
+        ],
+        "asA": ["As a "],
+        "iWant": ["I want to " ],
+        "soThat" : ["So that " ],
+        "qualityAttribute": ["Without ignoring"],
+        "qualityReason": ["By "]
+    },
   "en-Scouse": {
     "and": [
       "* ",

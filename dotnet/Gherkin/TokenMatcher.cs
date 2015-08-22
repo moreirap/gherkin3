@@ -225,5 +225,55 @@ namespace Gherkin
         {
             return text.Replace("\\\"\\\"\\\"", "\"\"\"");
         }
+
+        public bool Match_AsA_Step(Token token)
+        {
+            var keywords = CurrentDialect.AsAKeywords;
+            foreach (var keyword in keywords)
+            {
+                if (token.Line.StartsWith(keyword))
+                {
+                    var stepText = token.Line.GetRestTrimmed(keyword.Length);
+                    SetTokenMatched(token, TokenType.AsA_Step, keyword: keyword, text: stepText);
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public bool Match_IWant_Step(Token token)
+        {
+            var keywords = CurrentDialect.IWantKeywords;
+            foreach (var keyword in keywords)
+            {
+                if (token.Line.StartsWith(keyword))
+                {
+                    var stepText = token.Line.GetRestTrimmed(keyword.Length);
+                    SetTokenMatched(token, TokenType.IWant_Step, keyword: keyword, text: stepText);
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public bool Match_SoThat_Step(Token token)
+        {
+            var keywords = CurrentDialect.SoThatKeywords;
+            foreach (var keyword in keywords)
+            {
+                if (token.Line.StartsWith(keyword))
+                {
+                    var stepText = token.Line.GetRestTrimmed(keyword.Length);
+                    SetTokenMatched(token, TokenType.SoThat_Step, keyword: keyword, text: stepText);
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public bool Match_QualityAttributeLine(Token token)
+        {
+            return MatchTitleLine(token, TokenType.QualityAttributeLine, CurrentDialect.QualityAttributeKeywords);
+        }
     }
 }

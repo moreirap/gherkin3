@@ -17,9 +17,13 @@ namespace Gherkin
         public string[] ThenStepKeywords { get; private set; }
         public string[] AndStepKeywords { get; private set; }
         public string[] ButStepKeywords { get; private set; }
-
-
         public string[] StepKeywords { get; private set; }
+
+        public string[] AsAKeywords{ get; private set; }
+        public string[] IWantKeywords{ get; private set; }
+        public string[] SoThatKeywords{ get; private set; }
+        public string[] QualityAttributeKeywords{ get; private set; }
+        public string[] QualityReasonKeywords { get; private set; }
 
         public GherkinDialect(
             string language,
@@ -32,7 +36,12 @@ namespace Gherkin
             string[] whenStepKeywords,
             string[] thenStepKeywords,
             string[] andStepKeywords,
-            string[] butStepKeywords)
+            string[] butStepKeywords,
+            string[] asAKeywords,
+            string[] iWantKeywords,
+            string[] soThatKeywords,
+            string[] qualityAttributeKeywords,
+            string[] qualityReasonKeywords)
         {
             Language = language;
             FeatureKeywords = featureKeywords;
@@ -53,6 +62,12 @@ namespace Gherkin
                 .Concat(butStepKeywords)
                 .Distinct()
                 .ToArray();
+
+            AsAKeywords = asAKeywords;
+            IWantKeywords =iWantKeywords;
+            SoThatKeywords = soThatKeywords;
+            QualityAttributeKeywords = qualityAttributeKeywords;
+            QualityReasonKeywords = qualityReasonKeywords;
         }
     }
 }

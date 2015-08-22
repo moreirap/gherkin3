@@ -1,4 +1,5 @@
-
+SHELL=C:/Windows/System32/cmd.exe
+#PATH=
 MAKEFILES=$(wildcard */Makefile)
 
 all: $(patsubst %/Makefile,%/.compared,$(MAKEFILES))

@@ -134,6 +134,27 @@ namespace Gherkin
 
                     return string.Join(Environment.NewLine, lineTokens.Select(lt => lt.MatchedText));
                 }
+                case RuleType.Quality_Step:
+                {
+                    var qualityLine = node.GetToken(TokenType.QualityAttributeLine);
+                    var qualities = node.GetSingle<DataTable>(RuleType.DataTable);
+                    return new QualityAttributes(GetLocation(qualityLine), qualityLine.MatchedKeyword, qualities);               
+                }
+                case RuleType.Feature_Description:
+                {
+                    var actorLine = node.GetToken(TokenType.AsA_Step);
+                    var actor = new Actor(GetLocation(actorLine), actorLine.MatchedKeyword, actorLine.MatchedText);
+
+                    var goalLine = node.GetToken(TokenType.IWant_Step);
+                    var goal = new Goal(GetLocation(goalLine), goalLine.MatchedKeyword, goalLine.MatchedText);
+
+                    var benefitLine = node.GetToken(TokenType.SoThat_Step);
+                    var benefit = new Benefit(GetLocation(benefitLine), benefitLine.MatchedKeyword, benefitLine.MatchedText);
+
+                    var qualities = node.GetSingle<QualityAttributes>(RuleType.Quality_Step);
+
+                    return new FeatureDescription(GetLocation(actorLine), actor, goal, benefit,qualities);
+                }
                 case RuleType.Feature:
                 {
                     var header = node.GetSingle<AstNode>(RuleType.Feature_Header);
@@ -141,13 +162,14 @@ namespace Gherkin
                     var tags = GetTags(header);
                     var featureLine = header.GetToken(TokenType.FeatureLine);
                     if(featureLine == null) return null;
+                    var featureDescription = header.GetSingle<FeatureDescription>(RuleType.Feature_Description);                   
                     var background = node.GetSingle<Background>(RuleType.Background);
                     var scenariodefinitions = node.GetItems<ScenarioDefinition>(RuleType.Scenario_Definition).ToArray();
                     var description = GetDescription(header);
                     if(featureLine.MatchedGherkinDialect == null) return null;
                     var language = featureLine.MatchedGherkinDialect.Language;
 
-                    return new Feature(tags, GetLocation(featureLine), language, featureLine.MatchedKeyword, featureLine.MatchedText, description, background, scenariodefinitions, comments.ToArray());
+                    return new Feature(tags, GetLocation(featureLine), language, featureLine.MatchedKeyword, featureLine.MatchedText, featureDescription, background, scenariodefinitions, comments.ToArray());
                 }
             }
 

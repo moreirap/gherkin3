@@ -6,7 +6,7 @@ We should close all these issues before rolling Gherkin 3 into Cucumber/SpecFlow
   - Base it on the compiler in cucumber-ruby-core
   - Need `/testdata/good/*.feature.tescase.json` files
   - [ ] C#
-    - [ ] remove AST interfaces
+  - [ ] remove AST interfaces
   - [ ] Ruby
   - [ ] JavaScript
   - [ ] Java
@@ -26,7 +26,7 @@ We should close all these issues before rolling Gherkin 3 into Cucumber/SpecFlow
 - [x] Remove the `testdata/good/*.ast` files
 - [x] Use the new `dialects.json` file
   - [x] C#
-    - [x] Don't load JSON file from the file system, but from a resource embedded in the dll.
+  - [x] Don't load JSON file from the file system, but from a resource embedded in the dll.
   - [x] Ruby
   - [x] JavaScript
   - [x] Java
@@ -42,4 +42,4 @@ We should close all these issues before rolling Gherkin 3 into Cucumber/SpecFlow
   - [x] Ruby
   - [x] JavaScript
   - [x] Java
-- [x] Store comments in AST. Feature has a `comments` array of `{"type": "Comment", ...}`. Needed for pretty printing.
+  - [x] Store comments in AST. Feature has a `comments` array of `{"type": "Comment", ...}`. Needed for pretty printing.

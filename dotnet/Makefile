@@ -1,3 +1,6 @@
+SHELL=C:/Windows/System32/cmd.exe
+#PATH=
+
 GOOD_FEATURE_FILES = $(shell find ../testdata/good -name "*.feature")
 BAD_FEATURE_FILES  = $(shell find ../testdata/bad -name "*.feature")
 

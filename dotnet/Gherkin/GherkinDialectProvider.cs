@@ -30,6 +30,11 @@ namespace Gherkin
             public string[] then;
             public string[] and;
             public string[] but;
+            public string[] asA;
+            public string[] iWant;
+            public string[] soThat;
+            public string[] qualityAttribute;
+            public string[] qualityReason;
             // ReSharper restore InconsistentNaming
         }
 
@@ -90,7 +95,12 @@ namespace Gherkin
                 ParseStepKeywords(languageSettings.when),
                 ParseStepKeywords(languageSettings.then),
                 ParseStepKeywords(languageSettings.and),
-                ParseStepKeywords(languageSettings.but)
+                ParseStepKeywords(languageSettings.but),
+                languageSettings.asA,
+                languageSettings.iWant,
+                languageSettings.soThat,
+                languageSettings.qualityAttribute,
+                languageSettings.qualityReason
             );
         }
 
@@ -117,7 +127,15 @@ namespace Gherkin
                 new[] {"* ", "When " },
                 new[] {"* ", "Then " },
                 new[] {"* ", "And " },
-                new[] {"* ", "But " });
+                new[] {"* ", "But " },
+                new[] {"* ","As a "},
+                new[] {"* ","I want " },
+                new[] {"* ", "So that " },
+                new[] {"* ","Without ignoring "},
+                new[] {"* ","By "});
         }
     }
 }
+
+
+        

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<URNspec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <name>R48 - The product shall record meeting entries</name>
+  <grlspec>
+    <intElements xsi:type="IntentionalElement">
+      <id>3</id>
+      <name>Interoperability</name>
+      <importance>None</importance>
+      <actor>1</actor>
+      <type>Softgoal</type>
+      <decompositionType>AND</decompositionType>
+    </intElements>
+    <intElements xsi:type="IntentionalElement">
+      <id>4</id>
+      <name>By ensuring the product can work with most DBMS</name>
+      <importance>None</importance>
+      <actor>1</actor>
+      <type>Softgoal</type>
+      <decompositionType>AND</decompositionType>
+    </intElements>
+    <intElements xsi:type="IntentionalElement">
+      <id>5</id>
+      <name>Success rate</name>
+      <importance>None</importance>
+      <actor>1</actor>
+      <type>Softgoal</type>
+      <decompositionType>AND</decompositionType>
+    </intElements>
+    <intElements xsi:type="IntentionalElement">
+      <id>6</id>
+      <name>By ensuring the product can communicate with DBMS on 100% of all transactions</name>
+      <importance>None</importance>
+      <actor>1</actor>
+      <type>Softgoal</type>
+      <decompositionType>AND</decompositionType>
+    </intElements>
+    <intElements xsi:type="IntentionalElement">
+      <id>2</id>
+      <name>record meeting entries</name>
+      <importance>High</importance>
+      <importanceQuantitative>100</importanceQuantitative>
+      <actor>1</actor>
+      <type>Goal</type>
+      <decompositionType>AND</decompositionType>
+    </intElements>
+    <actors>
+      <id>1</id>
+      <name>Meeting Organiser</name>
+      <importance>None</importance>
+      <elems>2</elems>
+      <elems>3</elems>
+      <elems>4</elems>
+      <elems>5</elems>
+      <elems>6</elems>
+    </actors>
+  </grlspec>
+</URNspec>

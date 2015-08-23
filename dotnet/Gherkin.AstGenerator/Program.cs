@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 
 namespace Gherkin.AstGenerator
@@ -19,6 +20,8 @@ namespace Gherkin.AstGenerator
                 try
                 {
                     var astText = AstGenerator.GenerateAst(featureFilePath);
+                    var grlFilePath = Path.Combine(Path.GetDirectoryName(featureFilePath), Path.GetFileNameWithoutExtension(featureFilePath), ".z151");
+
                     Console.WriteLine(astText);
                 }
                 catch (Exception ex)

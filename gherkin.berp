@@ -9,7 +9,7 @@
 Feature! := Feature_Header Background? Scenario_Definition*
 Feature_Header! := #Language? Tags? #FeatureLine Feature_Description
 
-Feature_Description! := #AsA_Step #IWant_Step #SoThat_Step Quality_Step?
+Feature_Description! := Tags? #AsA_Step #IWant_Step #SoThat_Step Quality_Step?
 Quality_Step!        := #QualityAttributeLine DataTable
 
 Background! := #BackgroundLine Background_Description Scenario_Step*

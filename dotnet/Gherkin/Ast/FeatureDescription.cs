@@ -7,6 +7,7 @@ namespace Gherkin.Ast
 {
     public class FeatureDescription: IHasLocation
     {
+        public IEnumerable<Tag> Tags { get; private set; }
         public Location Location { get; private set; }
         public Actor Actor { get; private set; }
         public Goal Goal { get; private set; }
@@ -14,8 +15,9 @@ namespace Gherkin.Ast
         public QualityAttributes Qualities {get; private set;}
 
 
-        public FeatureDescription(Location location, Actor actor, Goal goal, Benefit benefit,QualityAttributes qualities )
+        public FeatureDescription(Tag[] tags,Location location, Actor actor, Goal goal, Benefit benefit,QualityAttributes qualities )
         {
+            Tags = tags;
             Location = location;
             Actor = actor;
             Goal = goal;

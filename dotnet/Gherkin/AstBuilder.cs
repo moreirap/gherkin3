@@ -142,6 +142,8 @@ namespace Gherkin
                 }
                 case RuleType.Feature_Description:
                 {
+                    var tags = GetTags(node);
+
                     var actorLine = node.GetToken(TokenType.AsA_Step);
                     var actor = new Actor(GetLocation(actorLine), actorLine.MatchedKeyword, actorLine.MatchedText);
 
@@ -153,7 +155,7 @@ namespace Gherkin
 
                     var qualities = node.GetSingle<QualityAttributes>(RuleType.Quality_Step);
 
-                    return new FeatureDescription(GetLocation(actorLine), actor, goal, benefit,qualities);
+                    return new FeatureDescription(tags,GetLocation(actorLine), actor, goal, benefit,qualities);
                 }
                 case RuleType.Feature:
                 {

@@ -17,22 +17,56 @@ namespace Gherkin.Ast
             var temp = new List<Quality>();
             foreach (var row in qualities.Rows)
             {
-                var quality = new Quality(row.Cells.ElementAt(0).Value, row.Cells.ElementAt(1).Value);
+                var quality = new Quality();
+                SetQualityValues(quality, row.Cells);
                 temp.Add(quality);               
             }
             Qualities = temp.ToArray();
         }
+
+        private void SetQualityValues(Quality quality, IEnumerable<TableCell> cells) 
+        {
+            // Set Name
+            TrySetQualityValue(quality, cells, 0);
+            // Set Description
+            TrySetQualityValue(quality, cells, 1);
+            // Set Contribution
+            TrySetQualityValue(quality, cells, 2);
+        }
+        private bool TrySetQualityValue(Quality quality, IEnumerable<TableCell> cells, int index)
+        {
+            var success = false;
+            try
+            {
+                switch (index) 
+                {
+                    case 0:
+                        quality.Name = cells.ElementAt(index).Value;
+                        break;
+                    case 1:
+                        quality.Description = cells.ElementAt(index).Value;
+                        break;
+                    case 2:
+                        quality.Contribution = cells.ElementAt(index).Value;
+                        break;
+                    default:
+                        throw new ApplicationException("Unexpected number of cells in quality");
+                }
+                success = true;
+            }
+            catch (Exception) {}
+            return success;
+        }
     }
     public class Quality 
     {
-        public string Name { get; private set; }
-        public string Description { get; private set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public string Contribution { get; set; }
 
-
-        public Quality(string name, string description)
+        public Quality()
         {
-            Name = name;
-            Description = description;
+            
         }
     }
 }

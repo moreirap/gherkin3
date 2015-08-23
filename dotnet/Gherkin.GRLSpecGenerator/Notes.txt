@@ -1,0 +1,1 @@
+﻿Each Intentional Element can only be associated with one Actor (Confirm what happens if we list same intention element when defining actor nodes)

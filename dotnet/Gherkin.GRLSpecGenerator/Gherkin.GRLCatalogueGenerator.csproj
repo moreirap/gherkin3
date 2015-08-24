@@ -7,8 +7,8 @@
     <ProjectGuid>{F2499819-162B-413C-B2C0-617BF198D614}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Gherkin.GRLSpecGenerator</RootNamespace>
-    <AssemblyName>Gherkin.GRLSpecGenerator</AssemblyName>
+    <RootNamespace>Gherkin.GRLCatalogueGenerator</RootNamespace>
+    <AssemblyName>Gherkin.GRLCatalogueGenerator</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -32,6 +32,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,12 +45,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LineEndingHelper.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="QualityCatalogue\Decomposition.cs" />
     <Compile Include="ExtensionMethods.cs" />
-    <Compile Include="GRLSpecGenerator.cs" />
-    <Compile Include="LineEndingHelper.cs" />
+    <Compile Include="grlcatalogPartials.cs" />
+    <Compile Include="grlcatalogue.cs" />
+    <Compile Include="GRLCatalogueGenerator.cs" />
+    <Compile Include="GRLElementsContainer.cs" />
+    <Compile Include="GRLCatalogueFactory.cs" />
+    <Compile Include="QualityCatalogue\Contributions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="URNSpec.cs" />
+    <Compile Include="QualityCatalogue\Quality.cs" />
+    <Compile Include="QualityCatalogue\QualityCatalogue.cs" />
     <Compile Include="XMLSerializerHelper.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -57,6 +71,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Notes.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FeaturesToGRLCatalogue.bat" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

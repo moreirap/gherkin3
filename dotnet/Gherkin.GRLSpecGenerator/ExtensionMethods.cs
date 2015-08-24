@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gherkin.GRLSpecGenerator
+namespace Gherkin.GRLCatalogueGenerator
 {
     public static class ExtensionMethods
     {
@@ -14,8 +14,6 @@ namespace Gherkin.GRLSpecGenerator
             {
                 updator(item);
             }
-
-
         }
     }
 }

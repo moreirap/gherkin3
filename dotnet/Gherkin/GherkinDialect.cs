@@ -63,9 +63,18 @@ namespace Gherkin
                 .Distinct()
                 .ToArray();
 
-            AsAKeywords = asAKeywords;
-            IWantKeywords =iWantKeywords;
-            SoThatKeywords = soThatKeywords;
+            AsAKeywords   = asAKeywords
+                .Concat(andStepKeywords)
+                .Distinct()
+                .ToArray();
+            IWantKeywords = iWantKeywords
+                .Concat(andStepKeywords)
+                .Distinct()
+                .ToArray();
+            SoThatKeywords = soThatKeywords
+                .Concat(andStepKeywords)
+                .Distinct()
+                .ToArray();
             QualityAttributeKeywords = qualityAttributeKeywords;
             QualityReasonKeywords = qualityReasonKeywords;
         }

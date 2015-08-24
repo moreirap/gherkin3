@@ -28,10 +28,8 @@ namespace Gherkin.Ast
         {
             // Set Name
             TrySetQualityValue(quality, cells, 0);
-            // Set Description
-            TrySetQualityValue(quality, cells, 1);
             // Set Contribution
-            TrySetQualityValue(quality, cells, 2);
+            TrySetQualityValue(quality, cells, 1);
         }
         private bool TrySetQualityValue(Quality quality, IEnumerable<TableCell> cells, int index)
         {
@@ -44,9 +42,6 @@ namespace Gherkin.Ast
                         quality.Name = cells.ElementAt(index).Value;
                         break;
                     case 1:
-                        quality.Description = cells.ElementAt(index).Value;
-                        break;
-                    case 2:
                         quality.Contribution = cells.ElementAt(index).Value;
                         break;
                     default:

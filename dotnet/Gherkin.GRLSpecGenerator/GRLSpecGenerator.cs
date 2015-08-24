@@ -64,22 +64,7 @@ namespace Gherkin.GRLSpecGenerator
 
         private static void TransformFeature(Ast.Feature parsingResult, GRLspec  grlSpec,GRLContainer container) 
         {
-            //<intElements>
-            //    <id>11</id>
-            //    <name>Record meeting entries</name>
-            //    <linksDest>34</linksDest>
-            //    <linksDest>59</linksDest>
-            //    <type>Goal</type>
-            //    <decompositionType>AND</decompositionType>
-            //    <importance>High</importance>
-            //    <importanceQuantitative>100</importanceQuantitative>
-            //    <refs>12</refs>
-            //    <style>
-            //        <filled>false</filled>
-            //    </style>
-            //    <actor>23</actor>
-            //</intElements>
-            
+           
             var importance = parsingResult.Description.Tags == null && parsingResult.Description.Tags.ElementAt(0) != null && parsingResult.Description.Tags.ElementAt(0).Name.StartsWith("@") ? "None" : parsingResult.Description.Tags.ElementAt(0).Name.Substring(1);
             var actor      = parsingResult.Description.Actor;
             var goal       = parsingResult.Description.Goal;         

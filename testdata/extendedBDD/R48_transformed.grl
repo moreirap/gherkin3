@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<grl-catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" catalog-name="URNspec" description="" author="Pedro Moreira">
+  <element-def>
+    <intentional-element id="3" type="Softgoal" decompositiontype="And" name="Interoperability" />
+    <intentional-element id="4" type="Softgoal" decompositiontype="And" name="By ensuring the product can work with most DBMS" />
+    <intentional-element id="5" type="Softgoal" decompositiontype="And" name="Success rate" />
+    <intentional-element id="6" type="Softgoal" decompositiontype="And" name="By ensuring the product can communicate with DBMS on 100% of all transactions" />
+    <intentional-element id="2" type="Goal" decompositiontype="And" name="record meeting entries" description="" />
+  </element-def>
+  <link-def>
+    <contribution srcid="3" destid="2" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_Quality_3_To_Goal_2" description="" />
+    <contribution srcid="4" destid="3" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_Quality_4_To_Goal_3" description="" />
+    <contribution srcid="5" destid="2" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_Quality_5_To_Goal_2" description="" />
+    <contribution srcid="6" destid="5" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_Quality_6_To_Goal_5" description="" />
+  </link-def>
+  <actor-def>
+    <actor id="1" name="Meeting Organiser" description="" />
+  </actor-def>
+  <actor-IE-link-def>
+    <actorContIE actor="1" ie="3" />
+    <actorContIE actor="1" ie="4" />
+    <actorContIE actor="1" ie="5" />
+    <actorContIE actor="1" ie="6" />
+    <actorContIE actor="1" ie="2" />
+  </actor-IE-link-def>
+</grl-catalog>

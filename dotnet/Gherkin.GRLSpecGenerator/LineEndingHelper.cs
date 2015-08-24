@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace Gherkin.GRLSpecGenerator
+namespace Gherkin.GRLCatalogueGenerator
 {
     public static class LineEndingHelper
     {

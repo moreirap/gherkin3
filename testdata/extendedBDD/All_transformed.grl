@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<grl-catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" catalog-name="GRL Catalogue" description="Generated from one or more feature files using Gherkin.GRLCatalogueGenerator" author="Pedro Moreira">
+  <element-def>
+    <intentional-element id="1" type="Softgoal" decompositiontype="AND" name="Operability" description="" />
+    <intentional-element id="2" type="Softgoal" name="By ensuring the product is easy to use" description="" />
+    <intentional-element id="4" type="Softgoal" name="By guaranteeing that 90% of users will be able to reserve conference room within 5 minutes of product use" description="" />
+    <intentional-element id="6" type="Softgoal" decompositiontype="AND" name="Interoperability" description="" />
+    <intentional-element id="7" type="Softgoal" name="By ensuring the product can work with most DBMS" description="" />
+    <intentional-element id="9" type="Softgoal" decompositiontype="AND" name="Success rate" description="" />
+    <intentional-element id="10" type="Softgoal" name="By ensuring the product can communicate with DBMS on 100% of all transactions" description="" />
+    <intentional-element id="12" type="Softgoal" decompositiontype="AND" name="Consistency" description="" />
+    <intentional-element id="13" type="Softgoal" name="By ensuring the database data corresponds to the data entered by the user" description="" />
+    <intentional-element id="15" type="Softgoal" name="By making each conference room reservation in the system contain the same information as entered by the user" description="" />
+    <intentional-element id="18" type="Goal" decompositiontype="And" name="Record meeting entries" description="" />
+    <intentional-element id="23" type="Goal" decompositiontype="And" name="Store new conference rooms" description="" />
+    <intentional-element id="27" type="Goal" decompositiontype="And" name="Update existing conference rooms" description="" />
+    <intentional-element id="31" type="Goal" decompositiontype="And" name="Reserve a conference room	and update the conference room schedule with the meeting's date and time" description="" />
+  </element-def>
+  <link-def>
+    <decomposition srcid="2" destid="1" name="QualityDecomposition_2_To_1" description="" />
+    <decomposition srcid="4" destid="1" name="QualityDecomposition_4_To_1" description="" />
+    <decomposition srcid="7" destid="6" name="QualityDecomposition_7_To_6" description="" />
+    <decomposition srcid="10" destid="9" name="QualityDecomposition_10_To_9" description="" />
+    <decomposition srcid="13" destid="12" name="QualityDecomposition_13_To_12" description="" />
+    <decomposition srcid="15" destid="12" name="QualityDecomposition_15_To_12" description="" />
+    <contribution srcid="6" destid="18" contributiontype="Make" quantitativeContribution="100" correlation="false" name="Contribution_From_Quality_6_To_Goal_18" description="" />
+    <contribution srcid="9" destid="18" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_Quality_9_To_Goal_18" description="" />
+    <contribution srcid="6" destid="23" contributiontype="SomePositive" quantitativeContribution="75" correlation="false" name="Contribution_From_Quality_6_To_Goal_23" description="" />
+    <contribution srcid="9" destid="23" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_Quality_9_To_Goal_23" description="" />
+    <contribution srcid="6" destid="27" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_Quality_6_To_Goal_27" description="" />
+    <contribution srcid="9" destid="27" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_Quality_9_To_Goal_27" description="" />
+    <contribution srcid="1" destid="31" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_Quality_1_To_Goal_31" description="" />
+    <contribution srcid="12" destid="31" contributiontype="Make" quantitativeContribution="100" correlation="false" name="Contribution_From_Quality_12_To_Goal_31" description="" />
+  </link-def>
+  <actor-def>
+    <actor id="17" name="Meeting Organiser" description="" />
+    <actor id="22" name="Facilities Manager" description="" />
+  </actor-def>
+  <actor-IE-link-def>
+    <actorContIE actor="17" ie="18" />
+    <actorContIE actor="22" ie="23" />
+    <actorContIE actor="22" ie="27" />
+    <actorContIE actor="17" ie="31" />
+  </actor-IE-link-def>
+</grl-catalog>

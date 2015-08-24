@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace Gherkin.GRLSpecGenerator
+namespace Gherkin.GRLCatalogueGenerator
 {
     public class XMLSerializerHelper
     {
-        public static String PrintXML(object obj)
+        public static String SerializeObject(object obj)
         {
             String Result = "";
 
             var serializer = new XmlSerializer(obj.GetType());
             
             MemoryStream mStream = new MemoryStream();
-            var writer = new XmlTextWriter(mStream, Encoding.UTF8);
+            var writer = new XmlTextWriter(mStream, new UTF8Encoding(false));
             writer.Formatting = Formatting.Indented;
 
             try
@@ -34,7 +34,7 @@ namespace Gherkin.GRLSpecGenerator
                 mStream.Position = 0;
 
                 // Read MemoryStream contents into a StreamReader.
-                StreamReader sReader = new StreamReader(mStream);
+                StreamReader sReader = new StreamReader(mStream, new UTF8Encoding(false));
 
                 // Extract the text from the StreamReader.
                 String FormattedXML = sReader.ReadToEnd();
@@ -49,6 +49,13 @@ namespace Gherkin.GRLSpecGenerator
             writer.Close();
 
             return Result;
+        }
+
+        public static string RemoveBOM(string text)
+        {
+            byte[] withBom = { 0xef, 0xbb, 0xbf, 0x41 };
+            string viaEncoding = Encoding.UTF8.GetString(withBom);
+            return !String.IsNullOrEmpty(text) && text.Length >= 3 && text.StartsWith(viaEncoding) ? text.Substring(3) : text; 
         }
     }
 

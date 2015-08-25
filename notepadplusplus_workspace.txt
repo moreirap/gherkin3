@@ -3,8 +3,6 @@
         <File name="testdata\extendedBDD\All_transformed.grl" />
         <File name="testdata\extendedBDD\feature.template" />
         <File name="testdata\extendedBDD\R48.feature" />
-        <File name="testdata\extendedBDD\R48_transformed.grl" />
-        <File name="testdata\extendedBDD\R48_transformed.z151" />
         <File name="testdata\extendedBDD\R53.feature" />
         <File name="testdata\extendedBDD\R54.feature" />
         <File name="testdata\extendedBDD\R55.feature" />

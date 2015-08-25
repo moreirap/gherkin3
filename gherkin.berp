@@ -19,7 +19,8 @@ Background! := #BackgroundLine Background_Description Scenario_Step*
 // we could avoid defining Scenario_Definition, but that would require regular look-aheads, so worse performance
 Scenario_Definition! := Tags? (Scenario | ScenarioOutline)
 
-Scenario! := #ScenarioLine Scenario_Description Scenario_Step* ScenarioContribution*
+//Scenario! := #ScenarioLine Scenario_Description Scenario_Step* ScenarioContribution*
+Scenario! := #ScenarioLine Scenario_Step* ScenarioContribution*
 
 ScenarioContribution! := #ScenarioContribution
 

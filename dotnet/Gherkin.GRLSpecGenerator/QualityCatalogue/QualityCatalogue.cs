@@ -50,28 +50,35 @@ namespace Gherkin.GRLCatalogueGenerator
     {
         private static int freeId = 0;
         public static string NextId { get { return Convert.ToString(++freeId); } }
-        public static string[][] DEFAULT_QUALITY_CATALOGUE_SPEC = {
-                                                        new [] {NextId,"Operability","And",NextId,"By ensuring the product is easy to use",NextId,"By guaranteeing that 90% of users will be able to reserve conference room within 5 minutes of product use"},
-                                                        new [] {NextId,"Interoperability","And",NextId,"By ensuring the product can work with most DBMS",NextId,"By ensuring the product can interface with various email servers and send email"},
-                                                        new [] {NextId,"Success rate","And",NextId,"By ensuring the product can communicate with DBMS on 100% of all transactions"},
-                                                        new [] {NextId,"Consistency","And",NextId,"By ensuring the database data corresponds to the data entered by the user",NextId,"By making each conference room reservation in the system contain the same information as entered by the user"},
-                                                        new [] {NextId,"Understandability","And",NextId,"By allowing intuitive searching of available conference rooms"},
-                                                        new [] {NextId,"Maintainability","And",NextId,"By designing the product using Design Patterns and coding best practices"},
-                                                        new [] {NextId,"Modifiability","And",NextId,"By ensuring 90% of maintenance software developers are able to integrate new functionality into the product with 2 working days"},
-                                                        new [] {NextId,"Configurability","And",NextId,"By allowing for customization of start page and views preferences"}
-                                                        //new [] {"","","And","",""}
-                                                    };
         //public static string[][] DEFAULT_QUALITY_CATALOGUE_SPEC = {
-        //                                                new [] {NextId,"Functional suitability","And", NextId,"Functional completeness", NextId,"Functional correctness", NextId,"Functional appropriateness"},
-        //                                                new [] {NextId,"Performance efficiency","And", NextId,"Time behaviour", NextId,"Resource utilization", NextId,"Capacity"},
-        //                                                new [] {NextId,"Compatibility","And", NextId,"Co-existence", NextId,"Interoperability"},
-        //                                                new [] {NextId,"Usability","And", NextId,"Appropriateness recognizability", NextId,"Learnability", NextId,"Operability", NextId,"User error protection", NextId,"user interface aesthetics", NextId,"Accessibility"},
-        //                                                new [] {NextId,"Reliability","And", NextId,"Maturity", NextId,"Availability", NextId,"Fault tolerance", NextId,"Recoverability"},
-        //                                                new [] {NextId,"Security","And", NextId,"Confidentiality", NextId,"Integrity", NextId,"Non-repudiation", NextId,"Accountability", NextId,"Authenticity"},
-        //                                                new [] {NextId,"Maintainability","And", NextId,"Modularity", NextId,"Reusability", NextId,"Analysability", NextId,"Modifiability", NextId,"Testability"},
-        //                                                new [] {NextId,"Portability","And", NextId,"Adaptability", NextId,"Installability", NextId,"Replaceability"}
+        //                                                new [] {NextId,"Operability","And",NextId,"By ensuring the product is easy to use",NextId,"By guaranteeing that 90% of users will be able to reserve conference room within 5 minutes of product use"},
+        //                                                new [] {NextId,"Interoperability","And",NextId,"By ensuring the product can work with most DBMS",NextId,"By ensuring the product can interface with various email servers and send email"},
+        //                                                new [] {NextId,"Success rate","And",NextId,"By ensuring the product can communicate with DBMS on 100% of all transactions"},
+        //                                                new [] {NextId,"Consistency","And",NextId,"By ensuring the database data corresponds to the data entered by the user",NextId,"By making each conference room reservation in the system contain the same information as entered by the user"},
+        //                                                new [] {NextId,"Understandability","And",NextId,"By allowing intuitive searching of available conference rooms"},
+        //                                                new [] {NextId,"Maintainability","And",NextId,"By designing the product using Design Patterns and coding best practices"},
+        //                                                new [] {NextId,"Modifiability","And",NextId,"By ensuring 90% of maintenance software developers are able to integrate new functionality into the product with 2 working days"},
+        //                                                new [] {NextId,"Configurability","And",NextId,"By allowing for customization of start page and views preferences"}
         //                                                //new [] {"","","And","",""}
         //                                            };
+        public static string[][] DEFAULT_QUALITY_CATALOGUE_SPEC = {
+                                                        // Product Quality Charactristics and sub-characteristics
+                                                        new [] {NextId,"Functional suitability","And", NextId,"Functional completeness", NextId,"Functional correctness", NextId,"Functional appropriateness"},
+                                                        new [] {NextId,"Performance efficiency","And", NextId,"Time behaviour", NextId,"Resource utilization", NextId,"Capacity"},
+                                                        new [] {NextId,"Compatibility","And", NextId,"Co-existence", NextId,"Interoperability"},
+                                                        new [] {NextId,"Usability","And", NextId,"Appropriateness recognizability", NextId,"Learnability", NextId,"Operability", NextId,"User error protection", NextId,"user interface aesthetics", NextId,"Accessibility"},
+                                                        new [] {NextId,"Reliability","And", NextId,"Maturity", NextId,"Availability", NextId,"Fault tolerance", NextId,"Recoverability"},
+                                                        new [] {NextId,"Security","And", NextId,"Confidentiality", NextId,"Integrity", NextId,"Non-repudiation", NextId,"Accountability", NextId,"Authenticity"},
+                                                        new [] {NextId,"Maintainability","And", NextId,"Modularity", NextId,"Reusability", NextId,"Analysability", NextId,"Modifiability", NextId,"Testability"},
+                                                        new [] {NextId,"Portability","And", NextId,"Adaptability", NextId,"Installability", NextId,"Replaceability"},
+                                                        //new [] {"","","And","",""}
+                                                        // Quality in Use characteristics and sub-characteristics
+                                                        new [] {NextId,"Effectiveness"},
+                                                        new [] {NextId,"Efficiency"},
+                                                        new [] {NextId,"Satisfaction", "And", NextId,"Usefulness", NextId,"Trust", NextId,"Pleasure", NextId,"Comfort"},
+                                                        new [] {NextId,"Freedom from risk", "And", NextId,"Economic risk mitigation", NextId,"Health and safety risk mitigation", NextId,"Environmental risk mitigation"},
+                                                        new [] {NextId,"Context coverage", "And", NextId,"Context completeness", NextId,"Flexibility"}
+                                                    };
     }
 }
 

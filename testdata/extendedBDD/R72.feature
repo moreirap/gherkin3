@@ -5,4 +5,8 @@ Feature: R72 - The product shall have a customizable look and feel
 	So that I can tailor the product to different departments and teams
 	
 Without ignoring: 
-	|	By allowing for customization of start page and views preferences	|	Make	|
+		|	user interface aesthetics	| SomePositive	|
+		|   Functional suitability		| Make			|
+		
+Scenario: Product's look and feel can be customised
+	Which helps user interface aesthetics

@@ -1,60 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
 <grl-catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" catalog-name="GRL Catalogue" description="Generated from one or more feature files using Gherkin.GRLCatalogueGenerator" author="Pedro Moreira">
   <element-def>
-    <intentional-element id="1" type="Softgoal" decompositiontype="AND" name="Operability" description="" />
-    <intentional-element id="2" type="Softgoal" decompositiontype="AND" name="Interoperability" description="" />
-    <intentional-element id="3" type="Softgoal" decompositiontype="AND" name="Success rate" description="" />
-    <intentional-element id="4" type="Softgoal" decompositiontype="AND" name="Consistency" description="" />
-    <intentional-element id="5" type="Softgoal" decompositiontype="AND" name="Understandability" description="" />
-    <intentional-element id="6" type="Softgoal" decompositiontype="AND" name="Maintainability" description="" />
-    <intentional-element id="7" type="Softgoal" decompositiontype="AND" name="Modifiability" description="" />
-    <intentional-element id="8" type="Softgoal" decompositiontype="AND" name="Configurability" description="" />
-    <intentional-element id="9" type="Softgoal" name="By ensuring the product is easy to use" description="" />
-    <intentional-element id="11" type="Softgoal" name="By guaranteeing that 90% of users will be able to reserve conference room within 5 minutes of product use" description="" />
-    <intentional-element id="13" type="Softgoal" name="By ensuring the product can work with most DBMS" description="" />
-    <intentional-element id="15" type="Softgoal" name="By ensuring the product can interface with various email servers and send email" description="" />
-    <intentional-element id="17" type="Softgoal" name="By ensuring the product can communicate with DBMS on 100% of all transactions" description="" />
-    <intentional-element id="19" type="Softgoal" name="By ensuring the database data corresponds to the data entered by the user" description="" />
-    <intentional-element id="21" type="Softgoal" name="By making each conference room reservation in the system contain the same information as entered by the user" description="" />
-    <intentional-element id="23" type="Softgoal" name="By allowing intuitive searching of available conference rooms" description="" />
-    <intentional-element id="25" type="Softgoal" name="By designing the product using Design Patterns and coding best practices" description="" />
-    <intentional-element id="27" type="Softgoal" name="By ensuring 90% of maintenance software developers are able to integrate new functionality into the product with 2 working days" description="" />
-    <intentional-element id="29" type="Softgoal" name="By allowing for customization of start page and views preferences" description="" />
-    <intentional-element id="32" type="Goal" decompositiontype="And" name="Record meeting entries" description="" />
-    <intentional-element id="36" type="Task" name="Record simplest meeting" description="" />
-    <intentional-element id="41" type="Goal" decompositiontype="And" name="Delete room equipment" description="" />
-    <intentional-element id="45" type="Goal" decompositiontype="And" name="Record all the reserved equipment" description="" />
+    <intentional-element id="1" type="Softgoal" decompositiontype="AND" name="Functional suitability" description="" />
+    <intentional-element id="2" type="Softgoal" decompositiontype="AND" name="Performance efficiency" description="" />
+    <intentional-element id="3" type="Softgoal" decompositiontype="AND" name="Compatibility" description="" />
+    <intentional-element id="4" type="Softgoal" decompositiontype="AND" name="Usability" description="" />
+    <intentional-element id="5" type="Softgoal" decompositiontype="AND" name="Reliability" description="" />
+    <intentional-element id="6" type="Softgoal" decompositiontype="AND" name="Security" description="" />
+    <intentional-element id="7" type="Softgoal" decompositiontype="AND" name="Maintainability" description="" />
+    <intentional-element id="8" type="Softgoal" decompositiontype="AND" name="Portability" description="" />
+    <intentional-element id="9" type="Softgoal" name="Effectiveness" description="" />
+    <intentional-element id="10" type="Softgoal" name="Efficiency" description="" />
+    <intentional-element id="11" type="Softgoal" decompositiontype="AND" name="Satisfaction" description="" />
+    <intentional-element id="12" type="Softgoal" decompositiontype="AND" name="Freedom from risk" description="" />
+    <intentional-element id="13" type="Softgoal" decompositiontype="AND" name="Context coverage" description="" />
+    <intentional-element id="14" type="Softgoal" name="Functional completeness" description="" />
+    <intentional-element id="16" type="Softgoal" name="Functional correctness" description="" />
+    <intentional-element id="18" type="Softgoal" name="Functional appropriateness" description="" />
+    <intentional-element id="20" type="Softgoal" name="Time behaviour" description="" />
+    <intentional-element id="22" type="Softgoal" name="Resource utilization" description="" />
+    <intentional-element id="24" type="Softgoal" name="Capacity" description="" />
+    <intentional-element id="26" type="Softgoal" name="Co-existence" description="" />
+    <intentional-element id="28" type="Softgoal" name="Interoperability" description="" />
+    <intentional-element id="30" type="Softgoal" name="Appropriateness recognizability" description="" />
+    <intentional-element id="32" type="Softgoal" name="Learnability" description="" />
+    <intentional-element id="34" type="Softgoal" name="Operability" description="" />
+    <intentional-element id="36" type="Softgoal" name="User error protection" description="" />
+    <intentional-element id="38" type="Softgoal" name="User interface aesthetics" description="" />
+    <intentional-element id="40" type="Softgoal" name="Accessibility" description="" />
+    <intentional-element id="42" type="Softgoal" name="Maturity" description="" />
+    <intentional-element id="44" type="Softgoal" name="Availability" description="" />
+    <intentional-element id="46" type="Softgoal" name="Fault tolerance" description="" />
+    <intentional-element id="48" type="Softgoal" name="Recoverability" description="" />
+    <intentional-element id="50" type="Softgoal" name="Confidentiality" description="" />
+    <intentional-element id="52" type="Softgoal" name="Integrity" description="" />
+    <intentional-element id="54" type="Softgoal" name="Non-repudiation" description="" />
+    <intentional-element id="56" type="Softgoal" name="Accountability" description="" />
+    <intentional-element id="58" type="Softgoal" name="Authenticity" description="" />
+    <intentional-element id="60" type="Softgoal" name="Modularity" description="" />
+    <intentional-element id="62" type="Softgoal" name="Reusability" description="" />
+    <intentional-element id="64" type="Softgoal" name="Analysability" description="" />
+    <intentional-element id="66" type="Softgoal" name="Modifiability" description="" />
+    <intentional-element id="68" type="Softgoal" name="Testability" description="" />
+    <intentional-element id="70" type="Softgoal" name="Adaptability" description="" />
+    <intentional-element id="72" type="Softgoal" name="Installability" description="" />
+    <intentional-element id="74" type="Softgoal" name="Replaceability" description="" />
+    <intentional-element id="76" type="Softgoal" name="Usefulness" description="" />
+    <intentional-element id="78" type="Softgoal" name="Trust" description="" />
+    <intentional-element id="80" type="Softgoal" name="Pleasure" description="" />
+    <intentional-element id="82" type="Softgoal" name="Comfort" description="" />
+    <intentional-element id="84" type="Softgoal" name="Economic risk mitigation" description="" />
+    <intentional-element id="86" type="Softgoal" name="Health and safety risk mitigation" description="" />
+    <intentional-element id="88" type="Softgoal" name="Environmental risk mitigation" description="" />
+    <intentional-element id="90" type="Softgoal" name="Context completeness" description="" />
+    <intentional-element id="92" type="Softgoal" name="Flexibility" description="" />
+    <intentional-element id="95" type="Goal" decompositiontype="And" name="Record meeting entries" description="" />
+    <intentional-element id="99" type="Task" name="Meeting entries can be recorded in most DBMS" description="" />
+    <intentional-element id="101" type="Task" name="100% of all transactions recording meeting entries in DBMS are successful" description="" />
+    <intentional-element id="103" type="Task" name="Record simplest meeting" description="" />
+    <intentional-element id="106" type="Task" name="Record meeting with only two attendants" description="" />
+    <intentional-element id="109" type="Task" name="Record complex meeting" description="" />
   </element-def>
   <link-def>
-    <dependency dependeeid="32" dependerid="41" name="Dependency_From_32_To_41" description="" />
-    <decomposition srcid="9" destid="1" name="Decomposition_From_9_To_1" description="" />
-    <decomposition srcid="11" destid="1" name="Decomposition_From_11_To_1" description="" />
-    <decomposition srcid="13" destid="2" name="Decomposition_From_13_To_2" description="" />
-    <decomposition srcid="15" destid="2" name="Decomposition_From_15_To_2" description="" />
-    <decomposition srcid="17" destid="3" name="Decomposition_From_17_To_3" description="" />
-    <decomposition srcid="19" destid="4" name="Decomposition_From_19_To_4" description="" />
-    <decomposition srcid="21" destid="4" name="Decomposition_From_21_To_4" description="" />
-    <decomposition srcid="23" destid="5" name="Decomposition_From_23_To_5" description="" />
-    <decomposition srcid="25" destid="6" name="Decomposition_From_25_To_6" description="" />
-    <decomposition srcid="27" destid="7" name="Decomposition_From_27_To_7" description="" />
-    <decomposition srcid="29" destid="8" name="Decomposition_From_29_To_8" description="" />
-    <contribution srcid="13" destid="32" contributiontype="Make" quantitativeContribution="100" correlation="false" name="Contribution_From_13_To_32" description="" />
-    <contribution srcid="17" destid="32" contributiontype="Make" quantitativeContribution="100" correlation="false" name="Contribution_From_17_To_32" description="" />
-    <contribution srcid="36" destid="13" contributiontype="Break" quantitativeContribution="-100" correlation="false" name="Contribution_From_36_To_13" description="" />
-    <contribution srcid="36" destid="17" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_36_To_17" description="" />
-    <contribution srcid="36" destid="32" contributiontype="SomePositive" quantitativeContribution="75" correlation="false" name="Contribution_From_36_To_32" description="" />
-    <contribution srcid="13" destid="41" contributiontype="Make" quantitativeContribution="100" correlation="false" name="Contribution_From_13_To_41" description="" />
-    <contribution srcid="17" destid="41" contributiontype="Make" quantitativeContribution="100" correlation="false" name="Contribution_From_17_To_41" description="" />
-    <contribution srcid="13" destid="45" contributiontype="Make" quantitativeContribution="100" correlation="false" name="Contribution_From_13_To_45" description="" />
-    <contribution srcid="17" destid="45" contributiontype="Make" quantitativeContribution="100" correlation="false" name="Contribution_From_17_To_45" description="" />
+    <decomposition srcid="14" destid="1" name="Decomposition_From_14_To_1" description="" />
+    <decomposition srcid="16" destid="1" name="Decomposition_From_16_To_1" description="" />
+    <decomposition srcid="18" destid="1" name="Decomposition_From_18_To_1" description="" />
+    <decomposition srcid="20" destid="2" name="Decomposition_From_20_To_2" description="" />
+    <decomposition srcid="22" destid="2" name="Decomposition_From_22_To_2" description="" />
+    <decomposition srcid="24" destid="2" name="Decomposition_From_24_To_2" description="" />
+    <decomposition srcid="26" destid="3" name="Decomposition_From_26_To_3" description="" />
+    <decomposition srcid="28" destid="3" name="Decomposition_From_28_To_3" description="" />
+    <decomposition srcid="30" destid="4" name="Decomposition_From_30_To_4" description="" />
+    <decomposition srcid="32" destid="4" name="Decomposition_From_32_To_4" description="" />
+    <decomposition srcid="34" destid="4" name="Decomposition_From_34_To_4" description="" />
+    <decomposition srcid="36" destid="4" name="Decomposition_From_36_To_4" description="" />
+    <decomposition srcid="38" destid="4" name="Decomposition_From_38_To_4" description="" />
+    <decomposition srcid="40" destid="4" name="Decomposition_From_40_To_4" description="" />
+    <decomposition srcid="42" destid="5" name="Decomposition_From_42_To_5" description="" />
+    <decomposition srcid="44" destid="5" name="Decomposition_From_44_To_5" description="" />
+    <decomposition srcid="46" destid="5" name="Decomposition_From_46_To_5" description="" />
+    <decomposition srcid="48" destid="5" name="Decomposition_From_48_To_5" description="" />
+    <decomposition srcid="50" destid="6" name="Decomposition_From_50_To_6" description="" />
+    <decomposition srcid="52" destid="6" name="Decomposition_From_52_To_6" description="" />
+    <decomposition srcid="54" destid="6" name="Decomposition_From_54_To_6" description="" />
+    <decomposition srcid="56" destid="6" name="Decomposition_From_56_To_6" description="" />
+    <decomposition srcid="58" destid="6" name="Decomposition_From_58_To_6" description="" />
+    <decomposition srcid="60" destid="7" name="Decomposition_From_60_To_7" description="" />
+    <decomposition srcid="62" destid="7" name="Decomposition_From_62_To_7" description="" />
+    <decomposition srcid="64" destid="7" name="Decomposition_From_64_To_7" description="" />
+    <decomposition srcid="66" destid="7" name="Decomposition_From_66_To_7" description="" />
+    <decomposition srcid="68" destid="7" name="Decomposition_From_68_To_7" description="" />
+    <decomposition srcid="70" destid="8" name="Decomposition_From_70_To_8" description="" />
+    <decomposition srcid="72" destid="8" name="Decomposition_From_72_To_8" description="" />
+    <decomposition srcid="74" destid="8" name="Decomposition_From_74_To_8" description="" />
+    <decomposition srcid="76" destid="11" name="Decomposition_From_76_To_11" description="" />
+    <decomposition srcid="78" destid="11" name="Decomposition_From_78_To_11" description="" />
+    <decomposition srcid="80" destid="11" name="Decomposition_From_80_To_11" description="" />
+    <decomposition srcid="82" destid="11" name="Decomposition_From_82_To_11" description="" />
+    <decomposition srcid="84" destid="12" name="Decomposition_From_84_To_12" description="" />
+    <decomposition srcid="86" destid="12" name="Decomposition_From_86_To_12" description="" />
+    <decomposition srcid="88" destid="12" name="Decomposition_From_88_To_12" description="" />
+    <decomposition srcid="90" destid="13" name="Decomposition_From_90_To_13" description="" />
+    <decomposition srcid="92" destid="13" name="Decomposition_From_92_To_13" description="" />
+    <contribution srcid="28" destid="95" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_28_To_95" description="" />
+    <contribution srcid="1" destid="95" contributiontype="Make" quantitativeContribution="100" correlation="false" name="Contribution_From_1_To_95" description="" />
+    <contribution srcid="99" destid="28" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_99_To_28" description="" />
+    <contribution srcid="101" destid="28" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_101_To_28" description="" />
+    <contribution srcid="103" destid="95" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_103_To_95" description="" />
+    <contribution srcid="103" destid="1" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_103_To_1" description="" />
+    <contribution srcid="106" destid="95" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_106_To_95" description="" />
+    <contribution srcid="106" destid="1" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_106_To_1" description="" />
+    <contribution srcid="109" destid="95" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_109_To_95" description="" />
+    <contribution srcid="109" destid="28" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_109_To_28" description="" />
+    <contribution srcid="109" destid="1" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_109_To_1" description="" />
   </link-def>
   <actor-def>
-    <actor id="31" name="Meeting Organiser" description="" />
-    <actor id="40" name="Facilities Manager" description="" />
+    <actor id="94" name="Meeting Organiser" description="" />
   </actor-def>
   <actor-IE-link-def>
-    <actorContIE actor="31" ie="32" />
-    <actorContIE actor="40" ie="41" />
-    <actorContIE actor="31" ie="45" />
+    <actorContIE actor="94" ie="95" />
   </actor-IE-link-def>
 </grl-catalog>

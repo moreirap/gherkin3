@@ -8,7 +8,7 @@ namespace Gherkin.GRLCatalogueGenerator
 {
     public class GRLCatalogueGenerator
     {
-        static string[] DEFAULT_QUALITY_SCENARIOS_TAGS = new[] { "NFR" , "Quality"};
+        static string[] DEFAULT_QUALITY_SCENARIOS_TAGS = new[] { "@NFR" , "@Quality"};
         static string DEFAULT_SCENARIO_TO_GOAL_CONTRIBUTION = "Help";
 
         GRLElementsContainer container;
@@ -60,6 +60,8 @@ namespace Gherkin.GRLCatalogueGenerator
             foreach (var impactedGoal in parsingResult.Description.ImpactedGoals)
             {
                 var impactedGoalElement = container.GetElementByName<grlcatalogIntentionalelement>(impactedGoal.Description);
+                if (impactedGoalElement == null)
+                    throw new ApplicationException(String.Format("Referring impacted goal that does not exist: {0}. Are you including all feature files?", impactedGoal.Description));
                 var dependencyElement = BuildDependencyElement(goalElement, impactedGoalElement);
                 grlCatalogue.linkdef.dependency = grlCatalogue.linkdef.dependency.Union(new[] { dependencyElement } ).ToArray();
             }
@@ -80,13 +82,18 @@ namespace Gherkin.GRLCatalogueGenerator
                 // Add Scenario as a Task to GRL Catalogue
                 grlCatalogue.elementdef = grlCatalogue.elementdef.Union(new[] { scenarioElement }).ToArray();
 
-                // Add default contribution from scenario to goal if there is no contribution specified in Scenario Contributions for Goal
-                if (!scenario.ScenarioContributions.Any(sc => String.Compare(sc.GoalOrQuality,goalElement.name,true) == 0) ) {
-                    var contributionElement = BuildContributionElement(DEFAULT_SCENARIO_TO_GOAL_CONTRIBUTION, scenarioElement, goalElement);
-                    grlCatalogue.linkdef.contribution = grlCatalogue.linkdef.contribution.Union(new[] { contributionElement }).ToArray();
+                // Only add contribution from scenario to goal if not an NFR-only scenario
+                if (scenario.Tags == null || !scenario.Tags.Any(tag => DEFAULT_QUALITY_SCENARIOS_TAGS.Contains(tag.Name)))
+                {
+                    // Add default contribution from scenario to goal if there is no contribution specified in Scenario Contributions for Goal
+                    if (!scenario.ScenarioContributions.Any(sc => String.Compare(sc.GoalOrQuality, goalElement.name, true) == 0))
+                    {
+                        var contributionElement = BuildContributionElement(DEFAULT_SCENARIO_TO_GOAL_CONTRIBUTION, scenarioElement, goalElement);
+                        grlCatalogue.linkdef.contribution = grlCatalogue.linkdef.contribution.Union(new[] { contributionElement }).ToArray();
+                    }
                 }
                 
-                // If scenario targets a quality
+                // Add scenario contributions
                 foreach (var scenarioContribution in scenario.ScenarioContributions)
                 {
                     var contributedGoal = container.GetElementByName<grlcatalogIntentionalelement>(scenarioContribution.GoalOrQuality);

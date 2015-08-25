@@ -5,5 +5,11 @@ Feature: R63 - The product shall record updated meeting agendas
 	So that I can have access to the details of the meeting
 	
 Without ignoring: 
-	|By ensuring the product can work with most DBMS									| Make	|
-	|By ensuring the product can communicate with DBMS on 100% of all transactions    	| Make	| 
+	|	Interoperability 		| Help	|
+	|   Functional suitability	| Make	|
+	
+Scenario: 	Meeting agendas can be recorded in most DBMS
+	Which helps Interoperability
+	
+Scenario:	100% of all transactions recording meeting agendas in DBMS are successful
+	Which helps Interoperability

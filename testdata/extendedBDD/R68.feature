@@ -5,5 +5,11 @@ Feature: R68 - The product shall record all the equipment that has been reserved
 	So that I can be sure all equipment will be available for the meeting
 	
 Without ignoring: 
-	|By ensuring the product can work with most DBMS									| Make	|
-	|By ensuring the product can communicate with DBMS on 100% of all transactions    	| Make	| 
+	|	Interoperability 		| Help	|
+	|   Functional suitability	| Make	|
+	
+Scenario: 	All the reserved equipment can be recorded in most DBMS
+	Which helps Interoperability
+	
+Scenario:	100% of all transactions recording all the reserved equipment in DBMS are successful
+	Which helps Interoperability

@@ -5,6 +5,15 @@ Feature: R70 - The product will allow privileged users to view meeting schedules
 	So that I can control schedules
 	
 Without ignoring: 
-	|By ensuring the product can work with most DBMS								| Make	|
-	|By ensuring the product can communicate with DBMS on 100% of all transactions  | Make	| 
-	|By allowing for customization of start page and views preferences 				| Make	|
+	|	Interoperability 			| Help			|
+	|	user interface aesthetics	| SomePositive	|
+	|   Functional suitability		| Make			|
+	
+Scenario: 	All meeting schedules can be stored in most DBMS
+	Which helps Interoperability
+	
+Scenario:	100% of all transactions recording meeting schedules in DBMS are successful
+	Which helps Interoperability
+
+Scenario: Multiple reporting views can be customised
+	Which helps user interface aesthetics

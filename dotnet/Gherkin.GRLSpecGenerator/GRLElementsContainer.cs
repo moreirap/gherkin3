@@ -43,8 +43,9 @@ namespace Gherkin.GRLCatalogueGenerator
 
         public T GetElementByName<T>(string name) where T : class,IElementWithIdentity
         {
-            if (registry.Any(keyval => keyval.Value.name == name))
-                return registry.First(keyval => keyval.Value.name == name).Value as T;
+            var capitalisedName = String.IsNullOrEmpty(name) ? "" : char.ToUpper(name[0]) + name.Substring(1);
+            if (registry.Any(keyval => keyval.Value.name == name || keyval.Value.name == capitalisedName))
+                return registry.First(keyval => keyval.Value.name == name || keyval.Value.name == capitalisedName).Value as T;
             return null;
         }
 

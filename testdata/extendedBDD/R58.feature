@@ -1,8 +1,8 @@
-Feature: R53 - The product shall store new conference rooms
-	
+Feature: R58 - The product shall be able to delete room equipment
+
 	As a Facilities Manager
-	I want to store new conference rooms
-	So that I can keep my facilities inventory updated
+	I want to delete room equipment
+	So that I can keep my conference rooms equipment inventory updated
 	
 Without ignoring: 
 	|By ensuring the product can work with most DBMS									| Make	|

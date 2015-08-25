@@ -1,1 +1,11 @@
 ﻿Each Intentional Element can only be associated with one Actor (Confirm what happens if we list same intention element when defining actor nodes)
+
+We can either list Quality only (e.g. Interoperability) or a sub-characteristic such as "By ensuring the product can work with most DBMS" in See feature 60 or "By ensuring the product can interface with various email servers and send email" in feature 64
+
+I want to or I want the as keywords. Some sentences read better that way. See feature 73
+
+
+Extract of Dan North's What's in a Story http://dannorth.net/whats-in-a-story/'
+Behaviour-driven development is an “outside-in” methodology. It starts at the outside by identifying business outcomes, and then drills down into the feature set that will achieve those outcomes. 
+Each feature is captured as a “story”, which defines the scope of the feature along with its acceptance criteria. 
+This article introduces the BDD approach to defining and identifying stories and their acceptance criteria.

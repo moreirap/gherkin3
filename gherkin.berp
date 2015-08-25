@@ -1,23 +1,28 @@
 ﻿[
-	Tokens -> #QualityAttributeLine,#AsA_Step,#IWant_Step,#SoThat_Step,#Empty,#Comment,#TagLine,#FeatureLine,#BackgroundLine,#ScenarioLine,#ScenarioOutlineLine,#ExamplesLine,#StepLine,#DocStringSeparator,#TableRow,#Language
+	Tokens -> #WichMayImpact, #ScenarioContribution,#QualityAttributeLine,#AsA_Step,#IWant_Step,#SoThat_Step,#Empty,#Comment,#TagLine,#FeatureLine,#BackgroundLine,#ScenarioLine,#ScenarioOutlineLine,#ExamplesLine,#StepLine,#DocStringSeparator,#TableRow,#Language
 	IgnoredTokens -> #Comment,#Empty
 	ClassName -> Parser
 	Namespace -> Gherkin
 ]
 
 
-Feature! := Feature_Header Background? Scenario_Definition*
-Feature_Header! := #Language? Tags? #FeatureLine Feature_Description
+Feature! := Feature_Header Background? Feature_Description Scenario_Definition*
+Feature_Header! := #Language? Tags? #FeatureLine 
 
-Feature_Description! := Tags? #AsA_Step #IWant_Step #SoThat_Step Quality_Step?
+Feature_Description! := Tags? #AsA_Step #IWant_Step #SoThat_Step WichMayImpact* Quality_Step?
 Quality_Step!        := #QualityAttributeLine DataTable
+
+WichMayImpact!		:= #WichMayImpact
 
 Background! := #BackgroundLine Background_Description Scenario_Step*
 
 // we could avoid defining Scenario_Definition, but that would require regular look-aheads, so worse performance
 Scenario_Definition! := Tags? (Scenario | ScenarioOutline)
 
-Scenario! := #ScenarioLine Scenario_Description Scenario_Step*
+Scenario! := #ScenarioLine Scenario_Description Scenario_Step* ScenarioContribution*
+
+ScenarioContribution! := #ScenarioContribution
+
 
 ScenarioOutline! := #ScenarioOutlineLine ScenarioOutline_Description ScenarioOutline_Step* Examples_Definition+
 // after the first "Examples" block, interpreting a tag line is ambiguous (tagline of next examples or of next scenario)
@@ -46,3 +51,10 @@ Examples_Description := Description_Helper
 // we also eat the leading empty lines, the tailing lines are not removed by the parser to avoid lookahead, this has to be done by the AST builder
 Description_Helper := #Empty* Description? #Comment*
 Description! := #Other+
+
+
+// By Breaking      <goal>
+// By Helping       <goal>
+// By Hurting       <goal>
+// By Making        <goal>
+// With <quantity> to <goal>

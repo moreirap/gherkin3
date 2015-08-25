@@ -12,17 +12,18 @@ namespace Gherkin.Ast
         public Actor Actor { get; private set; }
         public Goal Goal { get; private set; }
         public Benefit Benefit { get; private set; }
-        public QualityAttributes Qualities {get; private set;}
+        public IEnumerable<Goal> ImpactedGoals { get; private set; }
+        public QualityAttributes QualityAttributes {get; private set;}
 
-
-        public FeatureDescription(Tag[] tags,Location location, Actor actor, Goal goal, Benefit benefit,QualityAttributes qualities )
+        public FeatureDescription(Tag[] tags, Location location, Actor actor, Goal goal, Benefit benefit, Goal[] impactedGoals, QualityAttributes qualityAttributes)
         {
             Tags = tags;
             Location = location;
             Actor = actor;
             Goal = goal;
             Benefit = benefit;
-            Qualities = qualities;
+            ImpactedGoals = impactedGoals;
+            QualityAttributes = qualityAttributes;
         }
     }
 }

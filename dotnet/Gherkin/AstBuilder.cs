@@ -85,6 +85,17 @@ namespace Gherkin
                     var steps = GetSteps(node);
                     return new Background(GetLocation(backgroundLine), backgroundLine.MatchedKeyword, backgroundLine.MatchedText, description, steps);
                 }
+                case RuleType.ScenarioContribution:
+                {
+                    var scenarioContributionNode = node.GetToken(TokenType.ScenarioContribution);
+                    return new ScenarioContribution(GetLocation(scenarioContributionNode), scenarioContributionNode.MatchedKeyword, scenarioContributionNode.MatchedText);
+                }
+                case RuleType.WichMayImpact: 
+                {
+                    var impactedGoalNode = node.GetToken(TokenType.WichMayImpact);
+                    return new Goal(GetLocation(impactedGoalNode), impactedGoalNode.MatchedKeyword, impactedGoalNode.MatchedText);
+                }
+
                 case RuleType.Scenario_Definition:
                 {
                     var tags = GetTags(node);
@@ -94,10 +105,12 @@ namespace Gherkin
                     {
                         var scenarioLine = scenarioNode.GetToken(TokenType.ScenarioLine);
 
+                        var scenarioContributionsNode = scenarioNode.GetItems<ScenarioContribution>(RuleType.ScenarioContribution).ToArray();
+                        
                         var description = GetDescription(scenarioNode);
                         var steps = GetSteps(scenarioNode);
 
-                        return new Scenario(tags, GetLocation(scenarioLine), scenarioLine.MatchedKeyword, scenarioLine.MatchedText, description, steps);
+                        return new Scenario(tags, GetLocation(scenarioLine), scenarioLine.MatchedKeyword, scenarioLine.MatchedText, description, steps, scenarioContributionsNode);
                     }
                     else
                     {
@@ -153,9 +166,12 @@ namespace Gherkin
                     var benefitLine = node.GetToken(TokenType.SoThat_Step);
                     var benefit = new Benefit(GetLocation(benefitLine), benefitLine.MatchedKeyword, benefitLine.MatchedText);
 
-                    var qualities = node.GetSingle<QualityAttributes>(RuleType.Quality_Step);
+                    var impactedGoals = node.GetItems<Goal>(RuleType.WichMayImpact).ToArray();
 
-                    return new FeatureDescription(tags,GetLocation(actorLine), actor, goal, benefit,qualities);
+                    var qualities = node.GetSingle<QualityAttributes>(RuleType.Quality_Step);
+                    //var qualities = node.GetItem<QualityAttributes>(RuleType.Quality_Step);
+                    
+                    return new FeatureDescription(tags, GetLocation(actorLine), actor, goal, benefit, impactedGoals, qualities);
                 }
                 case RuleType.Feature:
                 {
@@ -164,7 +180,7 @@ namespace Gherkin
                     var tags = GetTags(header);
                     var featureLine = header.GetToken(TokenType.FeatureLine);
                     if(featureLine == null) return null;
-                    var featureDescription = header.GetSingle<FeatureDescription>(RuleType.Feature_Description);                   
+                    var featureDescription = node.GetSingle<FeatureDescription>(RuleType.Feature_Description);                   
                     var background = node.GetSingle<Background>(RuleType.Background);
                     var scenariodefinitions = node.GetItems<ScenarioDefinition>(RuleType.Scenario_Definition).ToArray();
                     var description = GetDescription(header);

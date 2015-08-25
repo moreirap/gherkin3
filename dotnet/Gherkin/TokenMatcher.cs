@@ -275,5 +275,36 @@ namespace Gherkin
         {
             return MatchTitleLine(token, TokenType.QualityAttributeLine, CurrentDialect.QualityAttributeKeywords);
         }
+
+        public bool Match_ScenarioContribution(Token token)
+        {
+            var keywords = CurrentDialect.ScenarioContributionKeywords;
+            foreach (var keyword in keywords)
+            {
+                if (token.Line.StartsWith(keyword))
+                {
+                    var stepText = token.Line.GetRestTrimmed(keyword.Length);
+                    SetTokenMatched(token, TokenType.ScenarioContribution, keyword: keyword, text: stepText);
+                    return true;
+                }
+            }
+            return false;
+        }
+
+
+        public bool Match_WichMayImpact(Token token)
+        {
+            var keywords = CurrentDialect.WichMayImpactKeywords;
+            foreach (var keyword in keywords)
+            {
+                if (token.Line.StartsWith(keyword))
+                {
+                    var stepText = token.Line.GetRestTrimmed(keyword.Length);
+                    SetTokenMatched(token, TokenType.WichMayImpact, keyword: keyword, text: stepText);
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }

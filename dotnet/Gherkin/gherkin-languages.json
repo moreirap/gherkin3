@@ -498,11 +498,28 @@
             "* ",
             "When "
         ],
-        "asA": ["As a "],
-        "iWant": ["I want to " ],
-        "soThat" : ["So that " ],
-        "qualityAttribute": ["Without ignoring"],
-        "qualityReason": ["By "]
+        "asA": [ "As a " ],
+        "iWant": [ "I want to ", "I want the" ],
+        "soThat": [ "So that " ],
+        "qualityAttribute": [ "Without ignoring" ],
+        "qualityReason": [ "By " ],
+        "scenarioContribution": [
+            "Breaking the ",
+            "Which breaks ",
+            "Contributing to break ",
+            "Helping the ",
+            "Which helps ",
+            "Contributing to help ",
+            "Hurting the ",
+            "Which hurts ",
+            "Contributing to hurt ",
+            "Making the ",
+            "Which makes ",
+            "Contributing to make ",
+            "With some positive contribution to ",
+            "With some negative contribution to "
+        ],
+        "whichMayImpact": [ "Which may impact " ]
     },
   "en-Scouse": {
     "and": [

@@ -22,6 +22,7 @@ namespace Gherkin.GRLCatalogueGenerator
             var startTime = Environment.TickCount;
             try
             {
+                // Use to generate JSon of default quality catalogue
                 //LoadDefaultQualityCatalogue();
                 //return 0;
 
@@ -34,13 +35,22 @@ namespace Gherkin.GRLCatalogueGenerator
 
                 var generator = new GRLCatalogueGenerator();
                 
+                // Avoid parsing features twice by collecting parsing results
+                var parsingResults = new Ast.Feature[] { };
+
                 // Prepend qualities from default catalogue
                 generator.AppendQualityCatalogue(defaultQualityCatalogue,grlCatalogue);
 
                 // Process all feature files passed as arguments
                 foreach (var featureFiles in args)
                 {
-                    UpdateGRLCatalogueWithFeature(featureFiles, grlCatalogue,generator);
+                    parsingResults = parsingResults.Concat(new [] { UpdateGRLCatalogueWithFeature(featureFiles, grlCatalogue, generator) } ).ToArray();
+                }
+
+                // Add any dependencies amongst goals. Can only run when all features have been processed
+                foreach (var parsingResult in parsingResults)
+                {
+                    generator.UpdateGRLCatalogueImpactedGoals(grlCatalogue, parsingResult);
                 }
 
                 // Serialise resulting GRL Catalogue
@@ -70,7 +80,6 @@ namespace Gherkin.GRLCatalogueGenerator
             var jsonSerializerSettings = new JsonSerializerSettings();
             jsonSerializerSettings.Formatting = Formatting.Indented;
             jsonSerializerSettings.NullValueHandling = NullValueHandling.Ignore;
-            //jsonSerializerSettings.ContractResolver = new FeatureAstJSonContractResolver();
 
             var lastAssignedId = 0;
             var qualityCatalogue = QualityCatalogue.BuildDefault(out lastAssignedId);
@@ -80,7 +89,7 @@ namespace Gherkin.GRLCatalogueGenerator
             Console.WriteLine("Last Assigned ID " + lastAssignedId);
         }
 
-        private static void UpdateGRLCatalogueWithFeature(string featureFilePath, grlcatalog grlCatalogue, GRLCatalogueGenerator generator)
+        private static Ast.Feature UpdateGRLCatalogueWithFeature(string featureFilePath, grlcatalog grlCatalogue, GRLCatalogueGenerator generator)
         {
             // Parse feature file and build AST
             var parser = new Parser();
@@ -88,8 +97,8 @@ namespace Gherkin.GRLCatalogueGenerator
             if (parsingResult == null)
                 throw new InvalidOperationException("parser returned null");
 
-            
             generator.UpdateGRLCatalogue(grlCatalogue, parsingResult);
+            return parsingResult;
         }
     }
 }

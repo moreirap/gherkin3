@@ -29,6 +29,12 @@ namespace Gherkin.GRLCatalogueGenerator
         }
     }
 
+    public partial class grlcatalogLinkdefDependency : IElementWithIdentity
+    {
+        [System.Xml.Serialization.XmlIgnoreAttribute]
+        public string id { get;  set; }
+    }
+
     public partial class grlcatalogActorContIE : IElementWithIdentity
     {
         private string _id;

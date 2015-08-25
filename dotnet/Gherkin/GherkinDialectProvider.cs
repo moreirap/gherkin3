@@ -35,6 +35,8 @@ namespace Gherkin
             public string[] soThat;
             public string[] qualityAttribute;
             public string[] qualityReason;
+            public string[] scenarioContribution;
+            public string[] whichMayImpact;
             // ReSharper restore InconsistentNaming
         }
 
@@ -100,7 +102,9 @@ namespace Gherkin
                 languageSettings.iWant,
                 languageSettings.soThat,
                 languageSettings.qualityAttribute,
-                languageSettings.qualityReason
+                languageSettings.qualityReason,
+                languageSettings.scenarioContribution,
+                languageSettings.whichMayImpact
             );
         }
 
@@ -131,8 +135,15 @@ namespace Gherkin
                 new[] {"* ","As a "},
                 new[] {"* ","I want " },
                 new[] {"* ", "So that " },
-                new[] {"* ","Without ignoring "},
-                new[] {"* ","By "});
+                new[] {"Without ignoring"},
+                new[] {"* ","By "},
+                new[] { "Breaking the ", "Which breaks ", "Contributing to break ",
+                        "Helping the ",  "Which helps ",  "Contributing to help ",
+                        "Hurting the ",  "Which hurts ",  "Contributing to hurt ",
+                        "Making the ",   "Which makes ",  "Contributing to make ",
+                        "With some positive contribution to ",
+                        "With some negative contribution to "},
+                new string[] {"Which may impact "});
         }
     }
 }

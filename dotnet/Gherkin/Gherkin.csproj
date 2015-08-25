@@ -65,6 +65,7 @@
     <Compile Include="Ast\Location.cs" />
     <Compile Include="Ast\QualityAttributes.cs" />
     <Compile Include="Ast\Scenario.cs" />
+    <Compile Include="Ast\ScenarioContribution.cs" />
     <Compile Include="Ast\ScenarioDefinition.cs" />
     <Compile Include="Ast\ScenarioOutline.cs" />
     <Compile Include="Ast\Step.cs" />

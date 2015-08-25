@@ -17,6 +17,7 @@ namespace Gherkin.GRLCatalogueGenerator
             grlCatalogue.linkdef = new grlcatalogLinkdef();
             grlCatalogue.linkdef.contribution = new grlcatalogLinkdefContribution[] { };
             grlCatalogue.linkdef.decomposition = new grlcatalogLinkdefDecomposition[] { };
+            grlCatalogue.linkdef.dependency = new grlcatalogLinkdefDependency[] { };
             grlCatalogue.actordef = new grlcatalogActor[] { };
             grlCatalogue.actorIElinkdef = new grlcatalogActorContIE[] { };
             return grlCatalogue;

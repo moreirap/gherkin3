@@ -29,7 +29,7 @@ namespace Gherkin.Specs
             string testFileFolder =
                 Path.GetFullPath(Path.Combine(TestFolders.InputFolder, "..", "..", "..", "..", @"testdata", category));
 
-            return Directory.GetFiles(testFileFolder, "*.feature");
+            return Directory.GetFiles(testFileFolder, "R48*.feature");
         }
     }
 }

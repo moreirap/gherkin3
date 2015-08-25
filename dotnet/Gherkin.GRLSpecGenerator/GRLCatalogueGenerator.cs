@@ -8,6 +8,9 @@ namespace Gherkin.GRLCatalogueGenerator
 {
     public class GRLCatalogueGenerator
     {
+        static string[] DEFAULT_QUALITY_SCENARIOS_TAGS = new[] { "NFR" , "Quality"};
+        static string DEFAULT_SCENARIO_TO_GOAL_CONTRIBUTION = "Help";
+
         GRLElementsContainer container;
 
         public GRLCatalogueGenerator()
@@ -28,18 +31,71 @@ namespace Gherkin.GRLCatalogueGenerator
             BindElementToActorAndUpdateGRLCatalogue(grlCatalogue, actorElement, goalElement);
 
             // Are there any non-functionals?
-            if (parsingResult.Description != null && parsingResult.Description.Qualities != null && parsingResult.Description.Qualities.Qualities.Length > 0)
+            if (parsingResult.Description != null && parsingResult.Description.QualityAttributes != null && parsingResult.Description.QualityAttributes.Qualities.Length > 0)
             {
                 // Add Qualities
                 AddQualitiesToGRLCatalogue(parsingResult, grlCatalogue, actorElement);
 
                 // Add Contribution Links from qualities to goal
                 AddQualityGoalContributionsToGRLCatalogue(parsingResult, grlCatalogue, goalElement);
-
-                // Add Decomposition links from quality descriptions to quality name
-                //AddQualityDecompositionsToGRLCatalogue(parsingResult, grlCatalogue, goalElement);
-
             }
+
+            // Are there any scenarios?
+            if (parsingResult.ScenarioDefinitions != null && parsingResult.ScenarioDefinitions.Count() > 0) 
+            {
+                // Add contributions from scenarios to goal
+                AddScenarioGoalContributionsToGRLCatalogue(parsingResult, grlCatalogue, goalElement);
+            }
+        }
+
+        /// <summary>
+        /// Adds dependencies between any goals that have been defined as part of "Which may impact" feature descriptions
+        /// Note this method should be invoked after all features have been processed to ensure all goals have already been added, so dependencies can be set
+        /// </summary>
+        /// <param name="grlCatalogue">The catalogue of GRL elements with all goals already defined</param>
+        /// <param name="parsingResult">The returned AST from parsing a Gherkin feature</param>
+        public void UpdateGRLCatalogueImpactedGoals(grlcatalog grlCatalogue, Ast.Feature parsingResult) 
+        {
+            var goalElement = container.GetElementByName<grlcatalogIntentionalelement>(parsingResult.Description.Goal.Description);
+            foreach (var impactedGoal in parsingResult.Description.ImpactedGoals)
+            {
+                var impactedGoalElement = container.GetElementByName<grlcatalogIntentionalelement>(impactedGoal.Description);
+                var dependencyElement = BuildDependencyElement(goalElement, impactedGoalElement);
+                grlCatalogue.linkdef.dependency = grlCatalogue.linkdef.dependency.Union(new[] { dependencyElement } ).ToArray();
+            }
+        }
+
+
+        private void AddScenarioGoalContributionsToGRLCatalogue(Ast.Feature parsingResult, grlcatalog grlCatalogue, grlcatalogIntentionalelement goalElement)
+        {
+            var scenarios = parsingResult.ScenarioDefinitions;
+            foreach (var scenario in scenarios)
+            {
+                var scenarioExists = false;
+                var scenarioElement = container.RegisterElement<grlcatalogIntentionalelement>(scenario.Name,out scenarioExists);
+                scenarioElement.type = "Task";
+                if (scenarioExists)
+                    throw new ApplicationException("Scenario already exists: " + scenarioElement.name);
+
+                // Add Scenario as a Task to GRL Catalogue
+                grlCatalogue.elementdef = grlCatalogue.elementdef.Union(new[] { scenarioElement }).ToArray();
+
+                // Add default contribution from scenario to goal if there is no contribution specified in Scenario Contributions for Goal
+                if (!scenario.ScenarioContributions.Any(sc => String.Compare(sc.GoalOrQuality,goalElement.name,true) == 0) ) {
+                    var contributionElement = BuildContributionElement(DEFAULT_SCENARIO_TO_GOAL_CONTRIBUTION, scenarioElement, goalElement);
+                    grlCatalogue.linkdef.contribution = grlCatalogue.linkdef.contribution.Union(new[] { contributionElement }).ToArray();
+                }
+                
+                // If scenario targets a quality
+                foreach (var scenarioContribution in scenario.ScenarioContributions)
+                {
+                    var contributedGoal = container.GetElementByName<grlcatalogIntentionalelement>(scenarioContribution.GoalOrQuality);
+
+                    // Add contribution from to goal
+                    var contributionElement = BuildContributionElement(scenarioContribution.Contribution, scenarioElement, contributedGoal);
+                    grlCatalogue.linkdef.contribution = grlCatalogue.linkdef.contribution.Union(new[] { contributionElement }).ToArray();
+                }
+            } 
         }
 
         private grlcatalogActor AddActorToGRLCatalogue(Ast.Feature parsingResult, grlcatalog grlCatalogue)
@@ -77,7 +133,7 @@ namespace Gherkin.GRLCatalogueGenerator
 
         private void AddQualitiesToGRLCatalogue(Ast.Feature parsingResult, grlcatalog grlCatalogue,  grlcatalogActor actorElement)
         {
-            var qualities = parsingResult.Description.Qualities.Qualities;
+            var qualities = parsingResult.Description.QualityAttributes.Qualities;
             foreach (var q in qualities)
             {
                 AddQualityAttributeToGRLCatalogue(grlCatalogue, actorElement, q.Name);
@@ -96,8 +152,6 @@ namespace Gherkin.GRLCatalogueGenerator
                 // Add intentional element to GRL catalogue
                 grlCatalogue.elementdef = grlCatalogue.elementdef.Union(new[] { qualityElement }).ToArray();
 
-                // Attach quality to Actor
-                //BindElementToActorAndUpdateGRLCatalogue(grlCatalogue, actorElement, qualityElement);
             }
         }
 
@@ -108,8 +162,7 @@ namespace Gherkin.GRLCatalogueGenerator
             var actorContIE = container.RegisterElement<grlcatalogActorContIE>(bindindName, out bindingExists);
             actorContIE.actor = actorElement.id;
             actorContIE.ie = boundedElement.id;
-            
-
+            // Bind element to actor by adding the actor->element link to GRL catalogue
             grlCatalogue.actorIElinkdef = grlCatalogue.actorIElinkdef.Union(new[] { actorContIE }).ToArray();
         }
 
@@ -117,11 +170,10 @@ namespace Gherkin.GRLCatalogueGenerator
 
         private void AddQualityGoalContributionsToGRLCatalogue(Ast.Feature parsingResult, grlcatalog grlCatalogue,  grlcatalogIntentionalelement goalElement)
         {
-            var qualities = parsingResult.Description.Qualities.Qualities;
+            var qualities = parsingResult.Description.QualityAttributes.Qualities;
             foreach (var q in qualities)
             {
                 var qualityNameElement = container.GetElementByName<grlcatalogIntentionalelement>(q.Name);
-                var qualityDescriptionElement = container.GetElementByName<grlcatalogIntentionalelement>(q.Description);
                     
                 var contributionElement = BuildContributionElement(q.Contribution, qualityNameElement,goalElement);
                 grlCatalogue.linkdef.contribution = grlCatalogue.linkdef.contribution.Union(new[] { contributionElement }).ToArray();
@@ -129,25 +181,10 @@ namespace Gherkin.GRLCatalogueGenerator
             }    
         }
 
-        private void AddQualityDecompositionsToGRLCatalogue(Ast.Feature parsingResult, grlcatalog grlCatalogue,  grlcatalogIntentionalelement goalElement)
-        {
-            var qualities = parsingResult.Description.Qualities.Qualities;
-            foreach (var q in qualities)
-            {
-                var qualityNameElement = container.GetElementByName<grlcatalogIntentionalelement>(q.Name);
-                var qualityDescriptionElement = container.GetElementByName<grlcatalogIntentionalelement>(q.Description);
-
-                var decompositionElement = BuildDecompositionElement(qualityDescriptionElement, qualityNameElement);
-                grlCatalogue.linkdef.decomposition = grlCatalogue.linkdef.decomposition.Union(new[] { decompositionElement }).ToArray();
-
-            }    
-            
-        }
-
         private grlcatalogLinkdefDecomposition BuildDecompositionElement(grlcatalogIntentionalelement sourceElement, grlcatalogIntentionalelement targetElement)
         {
             // Set decomposition between quality name and description
-            var decomposition_name = String.Format("QualityDecomposition_{0}_To_{1}", sourceElement.id, targetElement.id);
+            var decomposition_name = String.Format("Decomposition_From_{0}_To_{1}", sourceElement.id, targetElement.id);
             var decompositionExists = false;
             var decompositionElement = container.RegisterElement<grlcatalogLinkdefDecomposition>(decomposition_name, out decompositionExists);
             if (!decompositionExists)
@@ -161,7 +198,7 @@ namespace Gherkin.GRLCatalogueGenerator
         private grlcatalogLinkdefContribution BuildContributionElement(string contribution, grlcatalogIntentionalelement sourceElement, grlcatalogIntentionalelement targetElement)
         {
             // Set contribution between quality and goal
-            var contribution_name = String.Format("Contribution_From_Quality_{0}_To_Goal_{1}", sourceElement.id, targetElement.id);
+            var contribution_name = String.Format("Contribution_From_{0}_To_{1}", sourceElement.id, targetElement.id);
             var contributionExists = false;
             var contributionElement = container.RegisterElement<grlcatalogLinkdefContribution>(contribution_name, out contributionExists);
             if (!contributionExists)
@@ -175,21 +212,41 @@ namespace Gherkin.GRLCatalogueGenerator
             return contributionElement;
         }
 
+        private grlcatalogLinkdefDependency BuildDependencyElement(grlcatalogIntentionalelement sourceElement, grlcatalogIntentionalelement targetElement)
+        {
+            // Set contribution between quality and goal
+            var contribution_name = String.Format("Dependency_From_{0}_To_{1}", sourceElement.id, targetElement.id);
+            var contributionExists = false;
+            var contributionElement = container.RegisterElement<grlcatalogLinkdefDependency>(contribution_name, out contributionExists);
+            if (!contributionExists)
+            {
+                contributionElement.dependerid = targetElement.id;
+                contributionElement.dependeeid = sourceElement.id;
+            }
+            return contributionElement;
+        }
+
 
         internal void AppendQualityCatalogue(QualityCatalogue defaultQualityCatalogue, grlcatalog grlCatalogue)
         {
             var qualities = defaultQualityCatalogue.Qualities;
+
             foreach (var q in qualities)
             {
                 var qualityExists = false;
                 var qualityElement = container.RegisterElement<grlcatalogIntentionalelement>(q.Name, out qualityExists);
                 if (qualityExists)
-                     throw new ApplicationException("When building default catalogues, all elements should be unique: " + q.Name + " exists!");
+                    throw new ApplicationException("When building default catalogues, all elements should be unique: " + q.Name + " exists!");
 
                 // Add intentional element to GRL catalogue
                 qualityElement.type = "Softgoal";
                 grlCatalogue.elementdef = grlCatalogue.elementdef.Union(new[] { qualityElement }).ToArray();
-
+            }   
+            
+            foreach (var q in qualities)
+            {
+                var qualityExists = false;
+                var qualityElement = container.RegisterElement<grlcatalogIntentionalelement>(q.Name, out qualityExists);
                 if (q.Decomposition != null)
                 {
                     qualityElement.decompositiontype = q.Decomposition.Type.ToString();

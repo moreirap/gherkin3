@@ -1,8 +1,8 @@
-Feature: R54 - The product shall record meeting entries
+Feature: R57 - The product will update existing room equipment
 
 	As a Facilities Manager
-	I want to update existing conference rooms
-	So that I can keep my facilities inventory updated
+	I want to update existing room equipment
+	So that I can keep my conference rooms equipment inventory updated
 	
 Without ignoring: 
 	|By ensuring the product can work with most DBMS									| Make	|

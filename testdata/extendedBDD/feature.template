@@ -1,0 +1,9 @@
+Feature: R? - 											# describes an activity that the account holder wants to carry out (e.g. Account Holder withdraws cash)
+
+	As a <Role>											
+	I want to <Feature>
+	So that I <Benefit>
+	
+Without ignoring: 
+	|	<Quality>	|	<Contribution>	|
+	|	<Quality>	|	<Contribution>	|

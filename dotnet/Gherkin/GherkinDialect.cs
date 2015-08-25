@@ -24,6 +24,8 @@ namespace Gherkin
         public string[] SoThatKeywords{ get; private set; }
         public string[] QualityAttributeKeywords{ get; private set; }
         public string[] QualityReasonKeywords { get; private set; }
+        public string[] ScenarioContributionKeywords { get; private set; }
+        public string[] WichMayImpactKeywords { get; private set; }
 
         public GherkinDialect(
             string language,
@@ -41,7 +43,9 @@ namespace Gherkin
             string[] iWantKeywords,
             string[] soThatKeywords,
             string[] qualityAttributeKeywords,
-            string[] qualityReasonKeywords)
+            string[] qualityReasonKeywords,
+            string[] scenarioContributionKeywords,
+            string[] wichMayImpactKeywords)
         {
             Language = language;
             FeatureKeywords = featureKeywords;
@@ -77,6 +81,11 @@ namespace Gherkin
                 .ToArray();
             QualityAttributeKeywords = qualityAttributeKeywords;
             QualityReasonKeywords = qualityReasonKeywords;
+            ScenarioContributionKeywords = scenarioContributionKeywords;
+            WichMayImpactKeywords = wichMayImpactKeywords
+                .Concat(andStepKeywords)
+                .Distinct()
+                .ToArray();
         }
     }
 }

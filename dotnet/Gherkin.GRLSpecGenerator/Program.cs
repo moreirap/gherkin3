@@ -50,8 +50,11 @@ namespace Gherkin.GRLCatalogueGenerator
                 // Add any dependencies amongst goals. Can only run when all features have been processed
                 foreach (var parsingResult in parsingResults)
                 {
-                    generator.UpdateGRLCatalogueImpactedGoals(grlCatalogue, parsingResult);
+                    generator.UpdateGRLCatalogueWithImpactedGoals(grlCatalogue, parsingResult);
                 }
+
+                // Add any global goals. Need to have access to all AST trees to ensure no dependencies between global goals are created
+                generator.UpdateGRLCatalogueWithGlobalGoals(grlCatalogue, parsingResults);
 
                 // Serialise resulting GRL Catalogue
                 var grlCatalogueAsXmlString = XMLSerializerHelper.SerializeObject(grlCatalogue);

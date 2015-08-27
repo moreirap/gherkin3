@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Gherkin.Ast
 {
-    public class FeatureDescription: IHasLocation
+    public class FeatureDescription: IHasLocation, IHasTags
     {
         public IEnumerable<Tag> Tags { get; private set; }
         public Location Location { get; private set; }

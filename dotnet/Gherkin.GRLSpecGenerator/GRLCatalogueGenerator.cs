@@ -3,12 +3,14 @@ using System.Linq;
 using System.Text;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using Gherkin.Ast;
 
 namespace Gherkin.GRLCatalogueGenerator
 {
     public class GRLCatalogueGenerator
     {
-        static string[] DEFAULT_QUALITY_SCENARIOS_TAGS = new[] { "@NFR" , "@Quality"};
+        static string[] DEFAULT_QUALITY_SCENARIOS_TAGS      = new[] { "@NFR"   , "@QUALITY"};
+        static string[] GLOBAL_FEATURE_TAGS                 = new[] { "@GLOBAL", "@CROSS-CUTTING" };
         static string DEFAULT_SCENARIO_TO_GOAL_CONTRIBUTION = "Help";
 
         GRLElementsContainer container;
@@ -54,7 +56,7 @@ namespace Gherkin.GRLCatalogueGenerator
         /// </summary>
         /// <param name="grlCatalogue">The catalogue of GRL elements with all goals already defined</param>
         /// <param name="parsingResult">The returned AST from parsing a Gherkin feature</param>
-        public void UpdateGRLCatalogueImpactedGoals(grlcatalog grlCatalogue, Ast.Feature parsingResult) 
+        public void UpdateGRLCatalogueWithImpactedGoals(grlcatalog grlCatalogue, Ast.Feature parsingResult) 
         {
             var goalElement = container.GetElementByName<grlcatalogIntentionalelement>(parsingResult.Description.Goal.Description);
             foreach (var impactedGoal in parsingResult.Description.ImpactedGoals)
@@ -65,6 +67,43 @@ namespace Gherkin.GRLCatalogueGenerator
                 var dependencyElement = BuildDependencyElement(goalElement, impactedGoalElement);
                 grlCatalogue.linkdef.dependency = grlCatalogue.linkdef.dependency.Union(new[] { dependencyElement } ).ToArray();
             }
+        }
+
+        /// <summary>
+        /// Adds dependencies between any goals that have been tagged as Global goals. This usually refers to cross-cuttting concerns or qualities that apply to all goals
+        /// Note this method should be invoked after all features have been processed to ensure all goals have already been added, so dependencies can be set
+        /// </summary>
+        /// <param name="grlCatalogue">The catalogue of GRL elements with all goals already defined</param>
+        /// <param name="parsingResult">The returned AST from parsing a Gherkin feature</param>
+        public void UpdateGRLCatalogueWithGlobalGoals(grlcatalog grlCatalogue, Ast.Feature[] parsingResults)
+        {
+            foreach (var parsingResult in parsingResults)
+            {
+                var goalElement = container.GetElementByName<grlcatalogIntentionalelement>(parsingResult.Description.Goal.Description);
+                if (parsingResult.Description != null && HasGlobalTag(parsingResult.Description))
+                {
+                    foreach (var intentionalElement in grlCatalogue.elementdef)
+                    {
+                        var otherGoalElement = container.GetElementByName<grlcatalogIntentionalelement>(intentionalElement.name);
+                        var isGlobalGoal = parsingResults.Any(f => String.Compare(f.Description.Goal.Description,otherGoalElement.name,true)==0 && HasGlobalTag(f.Description));
+
+                        if (goalElement.id != otherGoalElement.id && intentionalElement.type == "Goal" && !isGlobalGoal)
+                        {
+                            // Avoid adding a dependency if a reverse dependency already exists. For example 2 global goals A and B would create 
+                            // two dependencies A->B and B->A and that would break the GRL Catalogue consistency
+                            var dependencyElement = BuildDependencyElement(goalElement, otherGoalElement);
+                            grlCatalogue.linkdef.dependency = grlCatalogue.linkdef.dependency.Union(new[] { dependencyElement }).ToArray();
+                        }
+                    }
+                }
+            }
+            
+            
+        }
+
+        private bool HasGlobalTag(IHasTags elementWithTags) 
+        {
+            return elementWithTags!= null && elementWithTags.Tags.Any(tag => GLOBAL_FEATURE_TAGS.Contains(tag.Name));
         }
 
 

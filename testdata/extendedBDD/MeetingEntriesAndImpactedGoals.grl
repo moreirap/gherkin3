@@ -1,4 +1,4 @@
-?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <grl-catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" catalog-name="GRL Catalogue" description="Generated from one or more feature files using Gherkin.GRLCatalogueGenerator" author="Pedro Moreira">
   <element-def>
     <intentional-element id="1" type="Softgoal" decompositiontype="AND" name="Functional suitability" description="" />

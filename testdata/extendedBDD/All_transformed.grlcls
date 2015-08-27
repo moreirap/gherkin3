@@ -1,4 +1,5 @@
-?xml version="1.0" encoding="utf-8"?>
+var= "..\..\testdata\extendedBDD\R48.feature" "..\..\testdata\extendedBDD\R62.feature" "..\..\testdata\extendedBDD\R63.feature" "..\..\testdata\extendedBDD\R67.feature" "..\..\testdata\extendedBDD\R68.feature" "..\..\testdata\extendedBDD\R72.feature" "..\..\testdata\extendedBDD\R73.feature"
+<?xml version="1.0" encoding="utf-8"?>
 <grl-catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" catalog-name="GRL Catalogue" description="Generated from one or more feature files using Gherkin.GRLCatalogueGenerator" author="Pedro Moreira">
   <element-def>
     <intentional-element id="1" type="Softgoal" decompositiontype="AND" name="Functional suitability" description="" />
@@ -60,20 +61,45 @@
     <intentional-element id="102" type="Task" name="Record simplest meeting" description="" />
     <intentional-element id="104" type="Task" name="Record meeting for a date in the past fails with a warning to the user" description="" />
     <intentional-element id="106" type="Task" name="Record complex meeting" description="" />
-    <intentional-element id="109" type="Goal" decompositiontype="And" name="Record different meeting types" description="" />
-    <intentional-element id="112" type="Task" name="Record one to one meeting" description="" />
-    <intentional-element id="114" type="Task" name="Record team meeting" description="" />
-    <intentional-element id="116" type="Task" name="Different Meeting types can be recorded in most DBMS" description="" />
-    <intentional-element id="118" type="Task" name="100% of all transactions recording different meeting types in DBMS are successful" description="" />
-    <intentional-element id="120" type="Goal" decompositiontype="And" name="Record a meeting agenda" description="" />
-    <intentional-element id="123" type="Task" name="Record meeting agenda with details in text" description="" />
-    <intentional-element id="125" type="Task" name="Record meeting agenda with details in HTML" description="" />
-    <intentional-element id="127" type="Task" name="Meeting agendas can be recorded in most DBMS" description="" />
-    <intentional-element id="129" type="Task" name="100% of all transactions recording meeting agendas in DBMS are successful" description="" />
+    <intentional-element id="109" type="Goal" decompositiontype="And" name="View a map of the company building" description="" />
+    <intentional-element id="113" type="Task" name="Product allows intuitive searching of available conference rooms" description="" />
+    <intentional-element id="115" type="Task" name="Product is designed using Design Patterns and coding best practices" description="" />
+    <intentional-element id="117" type="Task" name="90% of maintenance software developers are able to integrate new functionality into the product with 2 working days" description="" />
+    <intentional-element id="119" type="Goal" decompositiontype="And" name="Record a meeting agenda" description="" />
+    <intentional-element id="122" type="Task" name="Record meeting agenda with details in text" description="" />
+    <intentional-element id="124" type="Task" name="Record meeting agenda with details in HTML" description="" />
+    <intentional-element id="126" type="Task" name="Meeting agendas can be recorded in most DBMS" description="" />
+    <intentional-element id="128" type="Task" name="100% of all transactions recording meeting agendas in DBMS are successful" description="" />
+    <intentional-element id="130" type="Goal" decompositiontype="And" name="Record different meeting types" description="" />
+    <intentional-element id="133" type="Task" name="Record one to one meeting" description="" />
+    <intentional-element id="135" type="Task" name="Record team meeting" description="" />
+    <intentional-element id="137" type="Task" name="Different Meeting types can be recorded in most DBMS" description="" />
+    <intentional-element id="139" type="Task" name="100% of all transactions recording different meeting types in DBMS are successful" description="" />
+    <intentional-element id="141" type="Goal" decompositiontype="And" name="Record all the reserved equipment" description="" />
+    <intentional-element id="144" type="Task" name="Reserve projector for a meeting is recorded" description="" />
+    <intentional-element id="146" type="Task" name="Reserve projector and board for a meeting is recorded" description="" />
+    <intentional-element id="148" type="Task" name="All the reserved equipment can be recorded in most DBMS" description="" />
+    <intentional-element id="150" type="Task" name="100% of all transactions recording all the reserved equipment in DBMS are successful" description="" />
+    <intentional-element id="153" type="Goal" decompositiontype="And" name="Customise the product's look and feel" description="" />
+    <intentional-element id="156" type="Task" name="Product's look and feel can be customised" description="" />
+    <intentional-element id="159" type="Goal" decompositiontype="And" name="Product to have an intuitive interface" description="" />
+    <intentional-element id="163" type="Task" name="Product has an intuitive interface" description="" />
   </element-def>
   <link-def>
-    <dependency dependeeid="95" dependerid="109" name="Dependency_From_95_To_109" description="" />
-    <dependency dependeeid="95" dependerid="120" name="Dependency_From_95_To_120" description="" />
+    <dependency dependeeid="95" dependerid="130" name="Dependency_From_95_To_130" description="" />
+    <dependency dependeeid="95" dependerid="119" name="Dependency_From_95_To_119" description="" />
+    <dependency dependeeid="153" dependerid="95" name="Dependency_From_153_To_95" description="" />
+    <dependency dependeeid="153" dependerid="109" name="Dependency_From_153_To_109" description="" />
+    <dependency dependeeid="153" dependerid="119" name="Dependency_From_153_To_119" description="" />
+    <dependency dependeeid="153" dependerid="130" name="Dependency_From_153_To_130" description="" />
+    <dependency dependeeid="153" dependerid="141" name="Dependency_From_153_To_141" description="" />
+    <dependency dependeeid="153" dependerid="159" name="Dependency_From_153_To_159" description="" />
+    <dependency dependeeid="159" dependerid="95" name="Dependency_From_159_To_95" description="" />
+    <dependency dependeeid="159" dependerid="109" name="Dependency_From_159_To_109" description="" />
+    <dependency dependeeid="159" dependerid="119" name="Dependency_From_159_To_119" description="" />
+    <dependency dependeeid="159" dependerid="130" name="Dependency_From_159_To_130" description="" />
+    <dependency dependeeid="159" dependerid="141" name="Dependency_From_159_To_141" description="" />
+    <dependency dependeeid="159" dependerid="153" name="Dependency_From_159_To_153" description="" />
     <decomposition srcid="14" destid="1" name="Decomposition_From_14_To_1" description="" />
     <decomposition srcid="16" destid="1" name="Decomposition_From_16_To_1" description="" />
     <decomposition srcid="18" destid="1" name="Decomposition_From_18_To_1" description="" />
@@ -121,23 +147,46 @@
     <contribution srcid="104" destid="95" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_104_To_95" description="" />
     <contribution srcid="106" destid="95" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_106_To_95" description="" />
     <contribution srcid="106" destid="28" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_106_To_28" description="" />
-    <contribution srcid="28" destid="109" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_28_To_109" description="" />
-    <contribution srcid="112" destid="109" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_112_To_109" description="" />
-    <contribution srcid="114" destid="109" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_114_To_109" description="" />
-    <contribution srcid="116" destid="28" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_116_To_28" description="" />
-    <contribution srcid="118" destid="28" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_118_To_28" description="" />
-    <contribution srcid="28" destid="120" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_28_To_120" description="" />
-    <contribution srcid="123" destid="120" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_123_To_120" description="" />
-    <contribution srcid="125" destid="120" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_125_To_120" description="" />
-    <contribution srcid="127" destid="28" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_127_To_28" description="" />
-    <contribution srcid="129" destid="28" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_129_To_28" description="" />
+    <contribution srcid="32" destid="109" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_32_To_109" description="" />
+    <contribution srcid="7" destid="109" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_7_To_109" description="" />
+    <contribution srcid="113" destid="32" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_113_To_32" description="" />
+    <contribution srcid="115" destid="7" contributiontype="Make" quantitativeContribution="100" correlation="false" name="Contribution_From_115_To_7" description="" />
+    <contribution srcid="117" destid="66" contributiontype="Make" quantitativeContribution="100" correlation="false" name="Contribution_From_117_To_66" description="" />
+    <contribution srcid="28" destid="119" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_28_To_119" description="" />
+    <contribution srcid="122" destid="119" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_122_To_119" description="" />
+    <contribution srcid="124" destid="119" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_124_To_119" description="" />
+    <contribution srcid="126" destid="28" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_126_To_28" description="" />
+    <contribution srcid="128" destid="28" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_128_To_28" description="" />
+    <contribution srcid="28" destid="130" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_28_To_130" description="" />
+    <contribution srcid="133" destid="130" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_133_To_130" description="" />
+    <contribution srcid="135" destid="130" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_135_To_130" description="" />
+    <contribution srcid="137" destid="28" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_137_To_28" description="" />
+    <contribution srcid="139" destid="28" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_139_To_28" description="" />
+    <contribution srcid="28" destid="141" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_28_To_141" description="" />
+    <contribution srcid="144" destid="141" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_144_To_141" description="" />
+    <contribution srcid="146" destid="141" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_146_To_141" description="" />
+    <contribution srcid="148" destid="28" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_148_To_28" description="" />
+    <contribution srcid="150" destid="28" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_150_To_28" description="" />
+    <contribution srcid="38" destid="153" contributiontype="SomePositive" quantitativeContribution="75" correlation="false" name="Contribution_From_38_To_153" description="" />
+    <contribution srcid="156" destid="38" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_156_To_38" description="" />
+    <contribution srcid="156" destid="153" contributiontype="Make" quantitativeContribution="100" correlation="false" name="Contribution_From_156_To_153" description="" />
+    <contribution srcid="38" destid="159" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_38_To_159" description="" />
+    <contribution srcid="32" destid="159" contributiontype="SomePositive" quantitativeContribution="75" correlation="false" name="Contribution_From_32_To_159" description="" />
+    <contribution srcid="163" destid="38" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_163_To_38" description="" />
+    <contribution srcid="163" destid="32" contributiontype="Help" quantitativeContribution="25" correlation="false" name="Contribution_From_163_To_32" description="" />
+    <contribution srcid="163" destid="159" contributiontype="Make" quantitativeContribution="100" correlation="false" name="Contribution_From_163_To_159" description="" />
   </link-def>
   <actor-def>
     <actor id="94" name="Meeting Organiser" description="" />
+    <actor id="152" name="Procurement Manager" description="" />
   </actor-def>
   <actor-IE-link-def>
     <actorContIE actor="94" ie="95" />
     <actorContIE actor="94" ie="109" />
-    <actorContIE actor="94" ie="120" />
+    <actorContIE actor="94" ie="119" />
+    <actorContIE actor="94" ie="130" />
+    <actorContIE actor="94" ie="141" />
+    <actorContIE actor="152" ie="153" />
+    <actorContIE actor="152" ie="159" />
   </actor-IE-link-def>
 </grl-catalog>

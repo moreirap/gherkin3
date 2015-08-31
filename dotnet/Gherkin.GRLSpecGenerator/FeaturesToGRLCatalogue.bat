@@ -1,7 +1,7 @@
 @echo off
 @CHCP 850 > NUL
 @set var=
-@set fileNames=R48,R67,R63
+@set fileNames=R48,R67,R63,R73
 
 @set "yourDir=D:\Dev\thesis\gherkin3\testdata\extendedBDD"
 REM @for /f "usebackq tokens=*" %%a in (`dir "%yourDir%\*.feature" /b ^| findstr ".*" `) do @call set var=%%var%% "%yourDir%\%%~a"

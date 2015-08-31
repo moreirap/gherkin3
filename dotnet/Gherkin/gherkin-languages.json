@@ -501,7 +501,7 @@
         "asA": [ "As a " ],
         "iWant": [ "I want to ", "I want the" ],
         "soThat": [ "So that " ],
-        "qualityAttribute": [ "Without ignoring" ],
+        "qualityAttribute": [ "Without ignoring" , "Constrained by"],
         "qualityReason": [ "By " ],
         "scenarioContribution": [
             "Breaking the ",

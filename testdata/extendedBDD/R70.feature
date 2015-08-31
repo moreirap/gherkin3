@@ -4,7 +4,7 @@ Feature: R70 - The product will allow privileged users to view meeting schedules
 			I want to view meeting schedules in multiple reporting views
 			So that I can control schedules
 	
-Without ignoring: 
+Constrained by:
 			|	Interoperability 			| Help			|
 			|	user interface aesthetics	| SomePositive	|
 

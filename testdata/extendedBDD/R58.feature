@@ -4,7 +4,7 @@ Feature: R58 - The product shall be able to delete room equipment
 			I want to delete room equipment
 			So that I can keep my conference rooms equipment inventory updated
 	
-Without ignoring: 
+Constrained by:
 			|	Interoperability 		| Help	|
 
 Scenario: 	Delete room equipment not associated with a meeting succeeds

@@ -5,7 +5,7 @@ Feature: R72 - The product shall have a customizable look and feel
 			I want to customise the product's look and feel
 			So that I can tailor the product to different departments and teams
 	
-Without ignoring: 
+Constrained by:
 			|	user interface aesthetics	| SomePositive	|
 
 Scenario: 	Product's look and feel can be customised

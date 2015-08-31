@@ -4,8 +4,8 @@ Feature: R67 - The product shall record different meeting types
 			I want to record different meeting types
 			So that I can chose the most appropriate type of meeting
 	
-Without ignoring: 
-			|	Interoperability 		| Help	|
+Constrained by:
+			| Interoperability | Help |
 
 Scenario:	Record one to one meeting
 

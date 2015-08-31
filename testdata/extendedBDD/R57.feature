@@ -4,7 +4,7 @@ Feature: R57 - The product will update existing room equipment
 			I want to update existing room equipment
 			So that I can keep my conference rooms equipment inventory updated
 			
-Without ignoring: 
+Constrained by:
 			|	Interoperability 		| Help	|
 	
 Scenario: 	Room equipment can be updated in most DBMS

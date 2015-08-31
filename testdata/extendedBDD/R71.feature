@@ -4,7 +4,7 @@ Feature: R71 - The product shall be able to send meeting notifications via diffe
 			I want to send meeting notifications via different kinds of end-user specified methods
 			So that I can be sure I can contact all meeting attendees
 	
-Without ignoring: 
+Constrained by:
 			|	Interoperability 		| Help	|
 
 Scenario: 	Send email notification

@@ -4,10 +4,10 @@ Feature: R62 - The product shall display a map of the company building showing c
 			I want to view a map of the company building
 			So that I can see conference room locations and choose the best location for the meeting
 	
-Without ignoring: 
+Constrained by:
 			|	Learnability			|	Help	|
 			| 	Maintainability			|	Help	|
-
+			| 	Modifiability			|	Help	|
 
 @NFR	
 Scenario: 	Product allows intuitive searching of available conference rooms

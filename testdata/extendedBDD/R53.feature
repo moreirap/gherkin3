@@ -6,7 +6,7 @@ Feature: R53 - The product shall store new conference rooms
 			Which may impact update existing conference rooms
 			Which may impact delete conference rooms
 			
-Without ignoring: 
+Constrained by:
 			|	Interoperability 		| Help	|
 
 # This scenario does not include a contribution.

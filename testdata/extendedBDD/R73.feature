@@ -5,11 +5,10 @@ Feature: R73 - The product shall have an intuitive user interface
 			I want the product to have an intuitive interface
 			So that all users are able to use the product without difficulty
 	
-Without ignoring: 
+Constrained by:
 			|	user interface aesthetics	| Help			|
 			|	Learnability				| SomePositive	|
-		
+@NFR		
 Scenario: 	Product has an intuitive interface
-			Which helps user interface aesthetics
+			Which makes user interface aesthetics
 			Contributing to help Learnability
-			Making the product to have an intuitive interface

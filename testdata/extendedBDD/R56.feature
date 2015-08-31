@@ -6,7 +6,7 @@ Feature: R56 - The product shall be able to store new room equipment
 			Which may impact update existing room equipment
 			Which may impact delete room equipment
 			
-Without ignoring: 
+Constrained by:
 			|	Interoperability 		| Help	|
 
 Scenario: 	Record room equipment with minimum details

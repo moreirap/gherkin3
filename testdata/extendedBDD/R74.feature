@@ -4,10 +4,10 @@ Feature: R74 - The product will display an available status for unreserved confe
 			I want to see status for all unreserved conference rooms
 			So that I am able to chose the best room for a meeting
 	
-Without ignoring: 
+Constrained by:
 			|	Learnability			|	Help	|
 			|	Operability 			|	Help	|
-			|	Understandability		|	Make	|
+			|	Pleasure 				|	Help	|			
 
 Scenario: 	It is easy to see status for all unreserved conference rooms
 			Which helps Operability

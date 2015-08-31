@@ -4,7 +4,7 @@ Feature: R60 - Each time a conference room is reserved  the conference room sche
 			I want to reserve a conference room and update the schedule with the meeting's date and time
 			So that I prevent double bookings
 
-Without ignoring: 
+Constrained by:
 			|	Operability 			|	Help	|
 
 @NFR	

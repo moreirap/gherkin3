@@ -4,7 +4,7 @@ Feature: R68 - The product shall record all the equipment that has been reserved
 			I want to record all the reserved equipment
 			So that I can be sure all equipment will be available for the meeting
 	
-Without ignoring: 
+Constrained by:
 			|	Interoperability 		| Help	|
 
 Scenario:	Reserve projector for a meeting is recorded

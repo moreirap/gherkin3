@@ -4,7 +4,7 @@ Feature: R61 - The product shall record the transportation status of equipment r
 			I want to record the transportation status of equipment reserved
 			So that I can verify when the equipment is available
 	
-Without ignoring: 
+Constrained by:
 			|	Interoperability 		| Help	|
 
 @NFR	

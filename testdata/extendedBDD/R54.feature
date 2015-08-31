@@ -4,7 +4,7 @@ Feature: R54 - The product shall record meeting entries
 			I want to update existing conference rooms
 			So that I can keep my facilities inventory updated
 	
-Without ignoring: 
+Constrained by:
 			|	Interoperability 		| Help	|
 
 Scenario: 	Update conference room fields other than name

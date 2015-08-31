@@ -4,7 +4,7 @@ Feature: R55 - The product will be able to delete conference rooms
 			I want to delete conference rooms
 			So that I can keep my facilities inventory updated
 		
-Without ignoring: 
+Constrained by:
 			|	Interoperability 		| Help	|
 
 Scenario: 	Delete conference room not associated with a meeting succeeds

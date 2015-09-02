@@ -17,9 +17,11 @@ Scenario: 	Record conference room with minimum details
 			When I specify a conference room name, building identifier and floor
 			And I proceed to save the conference room
 			Then the conference room should be recorded
-	
+
+@NFR	
 Scenario: 	Conference rooms can be recorded in most DBMS
 			Contributing to help Interoperability
 
+@NFR
 Scenario:	100% of all transactions recording conference rooms in DBMS are successful
 			Contributing to help Interoperability

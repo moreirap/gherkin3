@@ -62,10 +62,10 @@ namespace Gherkin
         _Other, // #Other
         Feature, // Feature! := Feature_Header Background? Feature_Description Scenario_Definition*
         Feature_Header, // Feature_Header! := #Language? Tags? #FeatureLine
+        Background, // Background! := #BackgroundLine Background_Description Scenario_Step*
         Feature_Description, // Feature_Description! := Tags? #AsA_Step #IWant_Step #SoThat_Step WichMayImpact* Quality_Step?
         Quality_Step, // Quality_Step! := #QualityAttributeLine DataTable
         WichMayImpact, // WichMayImpact! := #WichMayImpact
-        Background, // Background! := #BackgroundLine Background_Description Scenario_Step*
         Scenario_Definition, // Scenario_Definition! := Tags? (Scenario | ScenarioOutline)
         Scenario, // Scenario! := #ScenarioLine Scenario_Step* ScenarioContribution*
         ScenarioContribution, // ScenarioContribution! := #ScenarioContribution

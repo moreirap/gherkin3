@@ -18,7 +18,5 @@ namespace Gherkin.GRLCatalogueGenerator
 
         public Decomposition Decomposition  { get; set; }
 
-        public IEnumerable<Contributions> Contributions { get; set; }
-
     }
 }

@@ -1,0 +1,152 @@
+{
+  "tags": [],
+  "location": {
+    "line": 1,
+    "column": 1
+  },
+  "language": "en",
+  "keyword": "Feature",
+  "name": "R54 - The product shall record meeting entries",
+  "description": {
+    "tags": [],
+    "location": {
+      "line": 3,
+      "column": 4
+    },
+    "actor": {
+      "location": {
+        "line": 3,
+        "column": 4
+      },
+      "name": "Facilities Manager",
+      "keyword": "As a ",
+      "type": "Actor"
+    },
+    "goal": {
+      "location": {
+        "line": 4,
+        "column": 4
+      },
+      "description": "update existing conference rooms",
+      "keyword": "I want to ",
+      "type": "Goal"
+    },
+    "benefit": {
+      "location": {
+        "line": 5,
+        "column": 4
+      },
+      "description": "I can keep my facilities inventory updated",
+      "keyword": "So that ",
+      "type": "Benefit"
+    },
+    "impactedGoals": [],
+    "qualityAttributes": {
+      "location": {
+        "line": 7,
+        "column": 1
+      },
+      "keyword": "Constrained by",
+      "qualities": [
+        {
+          "name": "Interoperability",
+          "contribution": "Help"
+        }
+      ],
+      "type": "QualityAttributes"
+    },
+    "type": "FeatureDescription"
+  },
+  "scenarioDefinitions": [
+    {
+      "tags": [],
+      "location": {
+        "line": 10,
+        "column": 1
+      },
+      "keyword": "Scenario",
+      "name": "Update conference room fields other than name",
+      "steps": [],
+      "scenarioContributions": [],
+      "type": "Scenario"
+    },
+    {
+      "tags": [],
+      "location": {
+        "line": 12,
+        "column": 1
+      },
+      "keyword": "Scenario",
+      "name": "Product does not allow updating conference room field name",
+      "steps": [],
+      "scenarioContributions": [],
+      "type": "Scenario"
+    },
+    {
+      "tags": [
+        {
+          "location": {
+            "line": 14,
+            "column": 1
+          },
+          "name": "@NFR",
+          "type": "Tag"
+        }
+      ],
+      "location": {
+        "line": 15,
+        "column": 1
+      },
+      "keyword": "Scenario",
+      "name": "Conference rooms can be updated in most DBMS",
+      "steps": [],
+      "scenarioContributions": [
+        {
+          "location": {
+            "line": 16,
+            "column": 4
+          },
+          "keyword": "Contributing to help ",
+          "goalOrQuality": "Interoperability",
+          "contribution": "Help",
+          "type": "ScenarioContribution"
+        }
+      ],
+      "type": "Scenario"
+    },
+    {
+      "tags": [
+        {
+          "location": {
+            "line": 18,
+            "column": 1
+          },
+          "name": "@NFR",
+          "type": "Tag"
+        }
+      ],
+      "location": {
+        "line": 19,
+        "column": 1
+      },
+      "keyword": "Scenario",
+      "name": "100% of all transactions updating conference rooms in DBMS are successful",
+      "steps": [],
+      "scenarioContributions": [
+        {
+          "location": {
+            "line": 20,
+            "column": 4
+          },
+          "keyword": "Contributing to help ",
+          "goalOrQuality": "Interoperability",
+          "contribution": "Help",
+          "type": "ScenarioContribution"
+        }
+      ],
+      "type": "Scenario"
+    }
+  ],
+  "comments": [],
+  "type": "Feature"
+}

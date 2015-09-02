@@ -23,7 +23,6 @@ namespace Gherkin.GRLCatalogueGenerator
 
             try
             {
-
                 // Write the XML into a formatting XmlTextWriter
                 serializer.Serialize(writer, obj);
                 writer.Flush();

@@ -6,6 +6,7 @@ Feature: R60 - Each time a conference room is reserved  the conference room sche
 
 Constrained by:
 			|	Operability 			|	Help	|
+			|	Pleasure 				|	Help	|
 
 @NFR	
 Scenario: 	Updated conference room schedule data in the database corresponds to the data entered by the user

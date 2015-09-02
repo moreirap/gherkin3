@@ -23,7 +23,6 @@ namespace Gherkin
         public string[] IWantKeywords{ get; private set; }
         public string[] SoThatKeywords{ get; private set; }
         public string[] QualityAttributeKeywords{ get; private set; }
-        public string[] QualityReasonKeywords { get; private set; }
         public string[] ScenarioContributionKeywords { get; private set; }
         public string[] WichMayImpactKeywords { get; private set; }
 
@@ -43,7 +42,6 @@ namespace Gherkin
             string[] iWantKeywords,
             string[] soThatKeywords,
             string[] qualityAttributeKeywords,
-            string[] qualityReasonKeywords,
             string[] scenarioContributionKeywords,
             string[] wichMayImpactKeywords)
         {
@@ -80,7 +78,6 @@ namespace Gherkin
                 .Distinct()
                 .ToArray();
             QualityAttributeKeywords = qualityAttributeKeywords;
-            QualityReasonKeywords = qualityReasonKeywords;
             ScenarioContributionKeywords = scenarioContributionKeywords;
             WichMayImpactKeywords = wichMayImpactKeywords
                 .Concat(andStepKeywords)

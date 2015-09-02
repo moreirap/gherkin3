@@ -58,7 +58,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="FeaturesToAST.bat" />
+    <Content Include="GherkinAST.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="packages.config" />
+    <None Include="R48.feature.ast.json" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

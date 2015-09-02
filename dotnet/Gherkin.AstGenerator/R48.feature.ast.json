@@ -1,0 +1,369 @@
+{
+  "tags": [],
+  "location": {
+    "line": 1,
+    "column": 1
+  },
+  "language": "en",
+  "keyword": "Feature",
+  "name": "R48 - The product shall record meeting entries",
+  "description": {
+    "tags": [],
+    "location": {
+      "line": 3,
+      "column": 4
+    },
+    "actor": {
+      "location": {
+        "line": 3,
+        "column": 4
+      },
+      "name": "Meeting Organiser",
+      "keyword": "As a ",
+      "type": "Actor"
+    },
+    "goal": {
+      "location": {
+        "line": 4,
+        "column": 4
+      },
+      "description": "record meeting entries",
+      "keyword": "I want to ",
+      "type": "Goal"
+    },
+    "benefit": {
+      "location": {
+        "line": 5,
+        "column": 4
+      },
+      "description": "I can always access a persisted record of each meeting",
+      "keyword": "So that ",
+      "type": "Benefit"
+    },
+    "impactedGoals": [
+      {
+        "location": {
+          "line": 6,
+          "column": 4
+        },
+        "description": "record different meeting types",
+        "keyword": "Which may impact ",
+        "type": "Goal"
+      },
+      {
+        "location": {
+          "line": 7,
+          "column": 4
+        },
+        "description": "record a meeting agenda",
+        "keyword": "Which may impact ",
+        "type": "Goal"
+      }
+    ],
+    "qualityAttributes": {
+      "location": {
+        "line": 9,
+        "column": 1
+      },
+      "keyword": "Constrained by",
+      "qualities": [
+        {
+          "name": "Interoperability",
+          "contribution": "Help"
+        }
+      ],
+      "type": "QualityAttributes"
+    },
+    "type": "FeatureDescription"
+  },
+  "scenarioDefinitions": [
+    {
+      "tags": [
+        {
+          "location": {
+            "line": 12,
+            "column": 1
+          },
+          "name": "@NFR",
+          "type": "Tag"
+        }
+      ],
+      "location": {
+        "line": 13,
+        "column": 1
+      },
+      "keyword": "Scenario",
+      "name": "Meeting entries can be recorded in most DBMS",
+      "steps": [],
+      "scenarioContributions": [
+        {
+          "location": {
+            "line": 14,
+            "column": 4
+          },
+          "keyword": "Which helps ",
+          "goalOrQuality": "Interoperability",
+          "contribution": "Help",
+          "type": "ScenarioContribution"
+        }
+      ],
+      "type": "Scenario"
+    },
+    {
+      "tags": [
+        {
+          "location": {
+            "line": 16,
+            "column": 1
+          },
+          "name": "@NFR",
+          "type": "Tag"
+        }
+      ],
+      "location": {
+        "line": 17,
+        "column": 1
+      },
+      "keyword": "Scenario",
+      "name": "100% of all transactions recording meeting entries in DBMS are successful",
+      "steps": [],
+      "scenarioContributions": [
+        {
+          "location": {
+            "line": 18,
+            "column": 4
+          },
+          "keyword": "Which helps ",
+          "goalOrQuality": "Interoperability",
+          "contribution": "Help",
+          "type": "ScenarioContribution"
+        }
+      ],
+      "type": "Scenario"
+    },
+    {
+      "tags": [],
+      "location": {
+        "line": 20,
+        "column": 1
+      },
+      "keyword": "Scenario",
+      "name": "Record simplest meeting",
+      "steps": [
+        {
+          "location": {
+            "line": 21,
+            "column": 4
+          },
+          "keyword": "Given ",
+          "text": "the application has been started",
+          "type": "Step"
+        },
+        {
+          "location": {
+            "line": 22,
+            "column": 4
+          },
+          "keyword": "And ",
+          "text": "I choose to add new meeting",
+          "type": "Step"
+        },
+        {
+          "location": {
+            "line": 23,
+            "column": 4
+          },
+          "keyword": "When ",
+          "text": "I specify a meeting name and date",
+          "type": "Step"
+        },
+        {
+          "location": {
+            "line": 24,
+            "column": 4
+          },
+          "keyword": "And ",
+          "text": "I proceed to save the meeting",
+          "type": "Step"
+        },
+        {
+          "location": {
+            "line": 25,
+            "column": 4
+          },
+          "keyword": "Then ",
+          "text": "the meeting should be recorded",
+          "type": "Step"
+        }
+      ],
+      "scenarioContributions": [],
+      "type": "Scenario"
+    },
+    {
+      "tags": [],
+      "location": {
+        "line": 27,
+        "column": 1
+      },
+      "keyword": "Scenario",
+      "name": "Record meeting for a date in the past fails with a warning to the user",
+      "steps": [
+        {
+          "location": {
+            "line": 28,
+            "column": 4
+          },
+          "keyword": "Given ",
+          "text": "the application has been started",
+          "type": "Step"
+        },
+        {
+          "location": {
+            "line": 29,
+            "column": 4
+          },
+          "keyword": "And ",
+          "text": "I choose to add new meeting",
+          "type": "Step"
+        },
+        {
+          "location": {
+            "line": 30,
+            "column": 4
+          },
+          "keyword": "When ",
+          "text": "I specify a date in the past",
+          "type": "Step"
+        },
+        {
+          "location": {
+            "line": 31,
+            "column": 4
+          },
+          "keyword": "And ",
+          "text": "I proceed to save the meeting",
+          "type": "Step"
+        },
+        {
+          "location": {
+            "line": 32,
+            "column": 4
+          },
+          "keyword": "Then ",
+          "text": "the meeting should not be recorded",
+          "type": "Step"
+        },
+        {
+          "location": {
+            "line": 33,
+            "column": 4
+          },
+          "keyword": "And ",
+          "text": "the user is warned with an appropriate message",
+          "type": "Step"
+        }
+      ],
+      "scenarioContributions": [],
+      "type": "Scenario"
+    },
+    {
+      "tags": [],
+      "location": {
+        "line": 35,
+        "column": 1
+      },
+      "keyword": "Scenario",
+      "name": "Record complex meeting",
+      "steps": [
+        {
+          "location": {
+            "line": 36,
+            "column": 4
+          },
+          "keyword": "Given ",
+          "text": "the application has been started",
+          "type": "Step"
+        },
+        {
+          "location": {
+            "line": 37,
+            "column": 4
+          },
+          "keyword": "And ",
+          "text": "I choose to add new meeting",
+          "type": "Step"
+        },
+        {
+          "location": {
+            "line": 38,
+            "column": 4
+          },
+          "keyword": "When ",
+          "text": "I specify a meeting with 10 attendants",
+          "type": "Step"
+        },
+        {
+          "location": {
+            "line": 39,
+            "column": 4
+          },
+          "keyword": "And ",
+          "text": "I choose an available conference room",
+          "type": "Step"
+        },
+        {
+          "location": {
+            "line": 40,
+            "column": 4
+          },
+          "keyword": "And ",
+          "text": "I request a projector to be available",
+          "type": "Step"
+        },
+        {
+          "location": {
+            "line": 41,
+            "column": 4
+          },
+          "keyword": "And ",
+          "text": "I proceed to save the meeting",
+          "type": "Step"
+        },
+        {
+          "location": {
+            "line": 42,
+            "column": 4
+          },
+          "keyword": "Then ",
+          "text": "the meeting should be recorded",
+          "type": "Step"
+        }
+      ],
+      "scenarioContributions": [
+        {
+          "location": {
+            "line": 43,
+            "column": 4
+          },
+          "keyword": "With some positive contribution to ",
+          "goalOrQuality": "record meeting entries",
+          "contribution": "SomePositive",
+          "type": "ScenarioContribution"
+        },
+        {
+          "location": {
+            "line": 44,
+            "column": 4
+          },
+          "keyword": "Contributing to help ",
+          "goalOrQuality": "Interoperability",
+          "contribution": "Help",
+          "type": "ScenarioContribution"
+        }
+      ],
+      "type": "Scenario"
+    }
+  ],
+  "comments": [],
+  "type": "Feature"
+}

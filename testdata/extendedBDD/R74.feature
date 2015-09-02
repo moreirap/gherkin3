@@ -9,10 +9,6 @@ Constrained by:
 			|	Operability 			|	Help	|
 			|	Pleasure 				|	Help	|			
 
-Scenario: 	It is easy to see status for all unreserved conference rooms
-			Which helps Operability
-			Contributing to help Pleasure
-	
 @NFR	
 Scenario: 	Product allows intuitive searching of all unreserved conference rooms
 			Which helps Learnability
@@ -21,3 +17,6 @@ Scenario: 	Product allows intuitive searching of all unreserved conference rooms
 Scenario:	90% of users are able to see status for all unreserved conference rooms within 5 minutes of product use
 			Which helps Operability
 	
+Scenario: 	It is easy to see status for all unreserved conference rooms
+			Which helps Operability
+			Contributing to help Pleasure

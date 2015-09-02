@@ -1,0 +1,222 @@
+{
+  "tags": [],
+  "location": {
+    "line": 1,
+    "column": 1
+  },
+  "language": "en",
+  "keyword": "Feature",
+  "name": "R53 - The product shall store new conference rooms",
+  "description": {
+    "tags": [],
+    "location": {
+      "line": 3,
+      "column": 4
+    },
+    "actor": {
+      "location": {
+        "line": 3,
+        "column": 4
+      },
+      "name": "Facilities Manager",
+      "keyword": "As a ",
+      "type": "Actor"
+    },
+    "goal": {
+      "location": {
+        "line": 4,
+        "column": 4
+      },
+      "description": "record new conference rooms",
+      "keyword": "I want to ",
+      "type": "Goal"
+    },
+    "benefit": {
+      "location": {
+        "line": 5,
+        "column": 4
+      },
+      "description": "I can keep my facilities inventory updated",
+      "keyword": "So that ",
+      "type": "Benefit"
+    },
+    "impactedGoals": [
+      {
+        "location": {
+          "line": 6,
+          "column": 4
+        },
+        "description": "update existing conference rooms",
+        "keyword": "Which may impact ",
+        "type": "Goal"
+      },
+      {
+        "location": {
+          "line": 7,
+          "column": 4
+        },
+        "description": "delete conference rooms",
+        "keyword": "Which may impact ",
+        "type": "Goal"
+      }
+    ],
+    "qualityAttributes": {
+      "location": {
+        "line": 9,
+        "column": 1
+      },
+      "keyword": "Constrained by",
+      "qualities": [
+        {
+          "name": "Interoperability",
+          "contribution": "Help"
+        }
+      ],
+      "type": "QualityAttributes"
+    },
+    "type": "FeatureDescription"
+  },
+  "scenarioDefinitions": [
+    {
+      "tags": [],
+      "location": {
+        "line": 14,
+        "column": 1
+      },
+      "keyword": "Scenario",
+      "name": "Record conference room with minimum details",
+      "steps": [
+        {
+          "location": {
+            "line": 15,
+            "column": 4
+          },
+          "keyword": "Given ",
+          "text": "the application has been started",
+          "type": "Step"
+        },
+        {
+          "location": {
+            "line": 16,
+            "column": 4
+          },
+          "keyword": "And ",
+          "text": "I choose to add new conference room",
+          "type": "Step"
+        },
+        {
+          "location": {
+            "line": 17,
+            "column": 4
+          },
+          "keyword": "When ",
+          "text": "I specify a conference room name, building identifier and floor",
+          "type": "Step"
+        },
+        {
+          "location": {
+            "line": 18,
+            "column": 4
+          },
+          "keyword": "And ",
+          "text": "I proceed to save the conference room",
+          "type": "Step"
+        },
+        {
+          "location": {
+            "line": 19,
+            "column": 4
+          },
+          "keyword": "Then ",
+          "text": "the conference room should be recorded",
+          "type": "Step"
+        }
+      ],
+      "scenarioContributions": [],
+      "type": "Scenario"
+    },
+    {
+      "tags": [
+        {
+          "location": {
+            "line": 21,
+            "column": 1
+          },
+          "name": "@NFR",
+          "type": "Tag"
+        }
+      ],
+      "location": {
+        "line": 22,
+        "column": 1
+      },
+      "keyword": "Scenario",
+      "name": "Conference rooms can be recorded in most DBMS",
+      "steps": [],
+      "scenarioContributions": [
+        {
+          "location": {
+            "line": 23,
+            "column": 4
+          },
+          "keyword": "Contributing to help ",
+          "goalOrQuality": "Interoperability",
+          "contribution": "Help",
+          "type": "ScenarioContribution"
+        }
+      ],
+      "type": "Scenario"
+    },
+    {
+      "tags": [
+        {
+          "location": {
+            "line": 25,
+            "column": 1
+          },
+          "name": "@NFR",
+          "type": "Tag"
+        }
+      ],
+      "location": {
+        "line": 26,
+        "column": 1
+      },
+      "keyword": "Scenario",
+      "name": "100% of all transactions recording conference rooms in DBMS are successful",
+      "steps": [],
+      "scenarioContributions": [
+        {
+          "location": {
+            "line": 27,
+            "column": 4
+          },
+          "keyword": "Contributing to help ",
+          "goalOrQuality": "Interoperability",
+          "contribution": "Help",
+          "type": "ScenarioContribution"
+        }
+      ],
+      "type": "Scenario"
+    }
+  ],
+  "comments": [
+    {
+      "location": {
+        "line": 12,
+        "column": 1
+      },
+      "text": "# This scenario does not include a contribution.",
+      "type": "Comment"
+    },
+    {
+      "location": {
+        "line": 13,
+        "column": 1
+      },
+      "text": "# Therefore, a default contribution from scenario to goal will be added",
+      "type": "Comment"
+    }
+  ],
+  "type": "Feature"
+}

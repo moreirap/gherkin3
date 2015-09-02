@@ -97,8 +97,6 @@ namespace Gherkin.GRLCatalogueGenerator
                     }
                 }
             }
-            
-            
         }
 
         private bool HasGlobalTag(IHasTags elementWithTags) 

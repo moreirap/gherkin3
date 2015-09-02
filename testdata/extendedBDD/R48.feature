@@ -23,7 +23,6 @@ Scenario:	Record simplest meeting
 			When I specify a meeting name and date
 			And I proceed to save the meeting
 			Then the meeting should be recorded
-#			Which helps record meeting entries
 	
 Scenario:	Record meeting for a date in the past fails with a warning to the user
 			Given the application has been started
@@ -32,7 +31,6 @@ Scenario:	Record meeting for a date in the past fails with a warning to the user
 			And I proceed to save the meeting
 			Then the meeting should not be recorded
 			And the user is warned with an appropriate message
-#			Which helps record meeting entries
 
 Scenario: 	Record complex meeting
 			Given the application has been started

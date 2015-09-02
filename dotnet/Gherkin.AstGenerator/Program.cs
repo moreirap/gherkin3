@@ -20,7 +20,7 @@ namespace Gherkin.AstGenerator
                 try
                 {
                     var astText = AstGenerator.GenerateAst(featureFilePath);
-                    var grlFilePath = Path.Combine(Path.GetDirectoryName(featureFilePath), Path.GetFileNameWithoutExtension(featureFilePath), ".z151");
+                    //var grlFilePath = Path.Combine(Path.GetDirectoryName(featureFilePath), Path.GetFileNameWithoutExtension(featureFilePath), ".z151");
 
                     Console.WriteLine(astText);
                 }

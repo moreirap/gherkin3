@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<discoD:Discovered xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:discoD="http://jsonDiscoverer/discovered/Discovered" language="en" keyword="Feature" name="R48 - The product shall record meeting entries" type="Feature">
+  <location line="1" column="1"/>
+  <description type="FeatureDescription">
+    <location line="3" column="4"/>
+    <actor name="Meeting Organiser" keyword="As a " type="Actor">
+      <location line="3" column="4"/>
+    </actor>
+    <goal description="record meeting entries" keyword="I want to " type="Goal">
+      <location line="4" column="4"/>
+    </goal>
+    <benefit description="I can always access a persisted record of each meeting" keyword="So that " type="Benefit">
+      <location line="5" column="4"/>
+    </benefit>
+    <impactedGoals description="record different meeting types" keyword="Which may impact " type="Goal">
+      <location line="6" column="4"/>
+    </impactedGoals>
+    <impactedGoals description="record a meeting agenda" keyword="Which may impact " type="Goal">
+      <location line="7" column="4"/>
+    </impactedGoals>
+    <qualityAttributes keyword="Constrained by" type="QualityAttributes">
+      <location line="9" column="1"/>
+      <qualities name="Interoperability" contribution="Help"/>
+    </qualityAttributes>
+  </description>
+  <scenarioDefinitions keyword="Scenario" name="Meeting entries can be recorded in most DBMS" type="Scenario">
+    <tags name="@NFR" type="Tag">
+      <location line="12" column="1"/>
+    </tags>
+    <location line="13" column="1"/>
+    <scenarioContributions keyword="Which helps " goalOrQuality="Interoperability" contribution="Help" type="ScenarioContribution">
+      <location line="14" column="4"/>
+    </scenarioContributions>
+  </scenarioDefinitions>
+  <scenarioDefinitions keyword="Scenario" name="100% of all transactions recording meeting entries in DBMS are successful" type="Scenario">
+    <tags name="@NFR" type="Tag">
+      <location line="16" column="1"/>
+    </tags>
+    <location line="17" column="1"/>
+    <scenarioContributions keyword="Which helps " goalOrQuality="Interoperability" contribution="Help" type="ScenarioContribution">
+      <location line="18" column="4"/>
+    </scenarioContributions>
+  </scenarioDefinitions>
+  <scenarioDefinitions keyword="Scenario" name="Record simplest meeting" type="Scenario">
+    <location line="20" column="1"/>
+    <steps></steps>
+  </scenarioDefinitions>
+  <scenarioDefinitions keyword="Scenario" name="Record meeting for a date in the past fails with a warning to the user" type="Scenario">
+    <location line="27" column="1"/>
+    <steps></steps>
+  </scenarioDefinitions>
+  <scenarioDefinitions keyword="Scenario" name="Record complex meeting" type="Scenario">
+    <location line="35" column="1"/>
+    <steps></steps>
+    <scenarioContributions keyword="With some positive contribution to " goalOrQuality="record meeting entries" contribution="SomePositive" type="ScenarioContribution">
+      <location line="43" column="4"/>
+    </scenarioContributions>
+    <scenarioContributions keyword="Contributing to help " goalOrQuality="Interoperability" contribution="Help" type="ScenarioContribution">
+      <location line="44" column="4"/>
+    </scenarioContributions>
+  </scenarioDefinitions>
+</discoD:Discovered>

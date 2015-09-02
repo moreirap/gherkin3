@@ -44,7 +44,8 @@ namespace Gherkin.GRLCatalogueGenerator
                 // Process all feature files passed as arguments
                 foreach (var featureFiles in args)
                 {
-                    parsingResults = parsingResults.Concat(new [] { UpdateGRLCatalogueWithFeature(featureFiles, grlCatalogue, generator) } ).ToArray();
+                    var parsingResult = UpdateGRLCatalogueWithFeature(featureFiles, grlCatalogue, generator);
+                    parsingResults = parsingResults.Concat(new [] { parsingResult } ).ToArray();
                 }
 
                 // Add any dependencies amongst goals. Can only run when all features have been processed
@@ -59,9 +60,6 @@ namespace Gherkin.GRLCatalogueGenerator
                 // Serialise resulting GRL Catalogue
                 var grlCatalogueAsXmlString = XMLSerializerHelper.SerializeObject(grlCatalogue);
                 Console.WriteLine(XMLSerializerHelper.RemoveBOM(grlCatalogueAsXmlString));
-                //var outputStream = Console.OpenStandardOutput();
-                //using (var textWriter = new StreamWriter(@"D:\Dev\thesis\gherkin3\testdata\extendedBDD\All_transformed.grl",false,new UTF8Encoding(false)))
-                //    textWriter.WriteLine(grlCatalogueAsXmlString);
             }
             catch (Exception ex)
             {
